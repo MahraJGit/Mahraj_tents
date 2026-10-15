@@ -53,7 +53,7 @@ export function AboutCta() {
 
   return (
     <Section spacing="compact">
-      <div className="relative isolate overflow-hidden rounded-md">
+      <div className="relative isolate overflow-hidden rounded-2xl">
         <div aria-hidden className="absolute inset-0 -z-20 bg-brand-dark" />
         {showImage ? (
           <Image

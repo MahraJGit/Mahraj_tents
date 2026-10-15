@@ -36,9 +36,9 @@ export function MobileNav({ megaMenu }: { megaMenu: MegaMenuColumn[] }) {
           <span className="sr-only">Open menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-full overflow-y-auto sm:max-w-sm">
+      <SheetContent side="right" className="w-full overflow-y-auto bg-ivory sm:max-w-sm">
         <SheetHeader className="border-b border-border">
-          <SheetTitle className="font-heading text-lg font-bold text-ink">
+          <SheetTitle className="font-heading text-2xl font-semibold text-ink">
             Mahraj <span className="text-brand">Tents</span>
           </SheetTitle>
         </SheetHeader>

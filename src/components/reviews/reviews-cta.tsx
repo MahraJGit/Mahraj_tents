@@ -16,7 +16,7 @@ export function ReviewsCta() {
 
   return (
     <Section>
-      <div className="relative isolate overflow-hidden rounded-md">
+      <div className="relative isolate overflow-hidden rounded-2xl">
         <div
           aria-hidden
           className="absolute inset-0 -z-20 bg-brand-dark"

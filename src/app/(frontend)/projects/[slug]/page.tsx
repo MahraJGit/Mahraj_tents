@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({
           <Media
             src={project.image}
             alt={project.title}
-            className="aspect-[4/3] rounded-md"
+            className="aspect-[4/3] rounded-xl"
             sizes="(min-width: 1024px) 46vw, 90vw"
           />
           <div>

@@ -20,15 +20,19 @@ export default function IndustriesPage() {
         description="The same clear-span approach, specified differently for a wedding, a show, a court, a yard, or a majlis."
       />
       <Section>
-        <Stagger className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <Stagger className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {industries.map(({ slug, label, icon: Icon }) => (
             <StaggerItem key={slug}>
               <Link
                 href={`/industries/${slug}`}
-                className="flex h-full flex-col items-center justify-center gap-3 rounded-md border border-border bg-background px-4 py-7 text-center transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm motion-reduce:hover:translate-y-0"
+                className="flex h-full flex-col items-center justify-center gap-4 rounded-xl bg-card px-4 py-10 text-center shadow-soft ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:hover:translate-y-0"
               >
-                <Icon className="size-6 text-brand" />
-                <span className="text-sm font-medium text-ink">{label}</span>
+                <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-brand">
+                  <Icon className="size-6" />
+                </span>
+                <span className="font-heading text-xl font-semibold text-ink">
+                  {label}
+                </span>
               </Link>
             </StaggerItem>
           ))}

@@ -20,12 +20,12 @@ export function AboutOverview() {
         <Media
           src={aboutOverview.image}
           alt="Mahraj Tents crew raising a frame"
-          className="aspect-[4/3] rounded-md"
+          className="aspect-[4/3] rounded-xl"
           sizes="(min-width: 1024px) 46vw, 90vw"
         />
 
         <div>
-          <h2 className="text-3xl font-semibold sm:text-4xl">
+          <h2 className="font-heading text-4xl font-semibold sm:text-5xl">
             {aboutOverview.title}
           </h2>
           <ol className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -41,7 +41,7 @@ export function AboutOverview() {
             ))}
           </ol>
 
-          <div className="mt-8 rounded-md border border-border border-s-4 border-s-brand bg-background p-5">
+          <div className="mt-8 rounded-xl border border-border border-s-4 border-s-brand bg-card p-5">
             <p className="flex items-center gap-2 text-sm font-semibold text-brand">
               <Target className="size-4" />
               Our Promise

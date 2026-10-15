@@ -7,7 +7,7 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "text-xs font-semibold uppercase tracking-[0.18em] text-brand",
+        "text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-brand",
         className
       )}
       {...props}
@@ -37,7 +37,7 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-6 md:flex-row md:items-end md:justify-between",
+        "flex flex-col gap-8 md:flex-row md:items-end md:justify-between",
         centered && "md:flex-col md:items-center",
         className
       )}
@@ -49,9 +49,17 @@ export function SectionHeading({
         )}
       >
         {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+        <span
+          aria-hidden
+          className={cn(
+            "mt-3 block h-0.5 w-10 bg-brand",
+            centered && "mx-auto",
+            !eyebrow && "mt-0"
+          )}
+        />
         <h2
           className={cn(
-            "mt-3 text-3xl font-semibold sm:text-4xl",
+            "mt-4 font-heading text-4xl font-semibold leading-[1.15] sm:text-5xl",
             onDark && "text-white"
           )}
         >
@@ -60,7 +68,7 @@ export function SectionHeading({
         {description ? (
           <p
             className={cn(
-              "mt-4 text-base leading-relaxed text-body",
+              "mt-5 text-base leading-relaxed text-body",
               onDark && "text-white/70"
             )}
           >

@@ -32,9 +32,9 @@ export function Reveal({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
       ref={ref}
-      initial={reduce ? false : { opacity: 0, y: 16 }}
-      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-      transition={{ duration: 0.6, ease }}
+      initial={reduce ? false : { opacity: 0, y: 22 }}
+      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+      transition={{ duration: 0.7, ease }}
     >
       {children}
     </motion.div>
@@ -42,8 +42,8 @@ export function Reveal({ children }: { children: React.ReactNode }) {
 }
 
 const staggerItem = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease } },
 };
 
 function useInView<T extends HTMLElement>() {

@@ -28,36 +28,37 @@ export async function TechnicalInsights() {
         }));
 
   return (
-    <Section tone="alt">
+    <Section>
       <SectionHeading
         align="center"
+        eyebrow="Journal"
         title="From the project desk"
         description="Short notes on choosing a span, hiring a tent, and planning Ramadan or exhibition dates."
       />
 
       <HomeCarousel
-        className="mt-10"
+        className="mt-14"
         itemClassName="w-full md:w-[calc((100%-2.5rem)/3)]"
         prevLabel="Previous insights"
         nextLabel="Next insights"
       >
         {posts.map((post) => (
-          <article key={post.key}>
-            <Link href={post.href} className="block">
+          <article key={post.key} className="group">
+            <Link href={post.href} className="block overflow-hidden rounded-xl">
               <Media
                 src={post.image}
                 alt={post.imageAlt}
-                className="aspect-[16/10] rounded-md"
+                className="aspect-[16/10]"
                 sizes="(min-width: 768px) 30vw, 90vw"
               />
             </Link>
-            <h3 className="mt-4 text-lg font-semibold text-ink">
+            <h3 className="mt-5 font-heading text-2xl font-semibold text-ink">
               <Link href={post.href} className="transition-colors hover:text-brand">
                 {post.title}
               </Link>
             </h3>
-            <Button asChild variant="brandDark" className="mt-4">
-              <Link href={post.href}>Read Full Guide</Link>
+            <Button asChild variant="brandDark" className="mt-5">
+              <Link href={post.href}>Read full guide</Link>
             </Button>
           </article>
         ))}

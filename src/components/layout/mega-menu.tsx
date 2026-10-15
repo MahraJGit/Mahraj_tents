@@ -49,7 +49,7 @@ export function MegaMenuPanel({ columns }: { columns: MegaMenuColumn[] }) {
                 onFocus={() => setActiveIndex(index)}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "flex min-w-[11rem] shrink-0 items-center justify-between gap-2 rounded-md border px-3 py-2 text-start transition-colors lg:min-w-0 lg:w-full",
+                  "flex min-w-[11rem] shrink-0 items-center justify-between gap-2 rounded-xl border px-3 py-2 text-start transition-colors lg:min-w-0 lg:w-full",
                   selected
                     ? "border-brand bg-brand text-white"
                     : "border-border bg-background text-ink hover:border-brand/40"
@@ -84,7 +84,7 @@ export function MegaMenuPanel({ columns }: { columns: MegaMenuColumn[] }) {
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? undefined : { opacity: 0, y: -6 }}
             transition={{ duration: 0.22, ease }}
-            className="rounded-md border border-border bg-surface-alt/70 p-2"
+            className="rounded-xl border border-border bg-sand/70 p-2"
           >
             <div className="mb-1.5 flex items-center justify-between gap-3 px-1.5">
               <h3 className="text-sm font-semibold text-ink">{active.title}</h3>
@@ -99,7 +99,7 @@ export function MegaMenuPanel({ columns }: { columns: MegaMenuColumn[] }) {
                 <li key={`${active.title}-${link.href}-${link.label}`}>
                   <Link
                     href={link.href}
-                    className="group flex items-center justify-between gap-2 rounded-md bg-background px-3 py-2 text-sm font-medium text-ink ring-1 ring-transparent transition-all hover:-translate-y-px hover:text-brand hover:ring-brand/30 hover:shadow-sm motion-reduce:hover:translate-y-0"
+                    className="group flex items-center justify-between gap-2 rounded-lg bg-card px-3 py-2 text-sm font-medium text-ink ring-1 ring-transparent transition-all hover:-translate-y-px hover:text-brand hover:shadow-soft hover:ring-brand/30 motion-reduce:hover:translate-y-0"
                   >
                     <span className="min-w-0 leading-5">{link.label}</span>
                     <ArrowUpRight className="size-4 shrink-0 text-body transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand" />

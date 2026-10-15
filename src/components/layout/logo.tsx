@@ -14,22 +14,22 @@ export function Logo({
     <Link
       href="/"
       className={cn(
-        "inline-flex items-center gap-2.5 font-heading text-xl font-bold tracking-tight sm:text-2xl",
+        "inline-flex items-center gap-2.5 font-heading text-[1.65rem] font-semibold tracking-tight sm:text-[1.85rem]",
         onDark ? "text-white" : "text-ink",
         className
       )}
     >
-      <span className="relative size-7 shrink-0 sm:size-8">
+      <span className="relative size-8 shrink-0 sm:size-9">
         <Image
           src="/svgs/logo/mahraj-mark.svg"
           alt="Mahraj Tents mark"
           fill
-          sizes="32px"
+          sizes="36px"
           className="object-contain"
         />
       </span>
       <span>
-        Mahraj <span className="text-brand">Tents</span>
+        Mahraj <span className="tracking-[0.04em] text-brand">Tents</span>
       </span>
     </Link>
   );

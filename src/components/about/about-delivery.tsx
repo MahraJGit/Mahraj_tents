@@ -81,7 +81,7 @@ export function AboutCompliance() {
         {aboutCompliance.map(({ title, icon: Icon }) => (
           <li
             key={title}
-            className="relative overflow-hidden rounded-md border border-border bg-background p-6"
+            className="relative overflow-hidden rounded-xl border border-border bg-card p-6"
           >
             <span className="flex size-9 items-center justify-center rounded bg-brand/10 text-brand">
               <Icon className="size-4" />

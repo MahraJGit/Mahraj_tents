@@ -20,7 +20,7 @@ export function ReviewsHero() {
     <section className="relative isolate overflow-hidden bg-ink">
       <div
         aria-hidden
-        className="absolute inset-0 -z-20 bg-gradient-to-br from-neutral-700 via-neutral-800 to-neutral-900"
+        className="absolute inset-0 -z-20 bg-gradient-to-br from-[#3a2a24] via-[#2a2522] to-[#1c1917]"
       />
       {showImage ? (
         <Image
@@ -34,10 +34,10 @@ export function ReviewsHero() {
       ) : null}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/55 to-black/25"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/50 to-ink/20"
       />
 
-      <Container className="flex min-h-[30rem] flex-col justify-center py-20 lg:min-h-[34rem] lg:py-24">
+      <Container className="flex min-h-[34rem] flex-col justify-end py-20 lg:min-h-[40rem] lg:py-24">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/75">
             <li>

@@ -37,7 +37,7 @@ export function Media({
         role="img"
         aria-label={alt}
         className={cn(
-          "relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-200 via-neutral-300 to-neutral-400",
+          "relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#e8dcce] via-[#d4c4b0] to-[#b8a48c]",
           className
         )}
       >
@@ -59,7 +59,7 @@ export function Media({
           alt={alt}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
-          className="absolute inset-0 size-full object-cover object-center"
+          className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
       </div>
     );
@@ -73,7 +73,7 @@ export function Media({
         fill
         sizes={sizes}
         priority={priority}
-        className="object-cover object-center"
+        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
       />
     </div>
   );

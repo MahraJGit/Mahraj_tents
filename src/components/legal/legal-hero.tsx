@@ -18,7 +18,7 @@ export function LegalHero({ doc }: { doc: LegalDocument }) {
     <section className="relative isolate overflow-hidden bg-ink">
       <div
         aria-hidden
-        className="absolute inset-0 -z-20 bg-gradient-to-br from-neutral-700 via-neutral-800 to-neutral-900"
+        className="absolute inset-0 -z-20 bg-gradient-to-br from-[#3a2a24] via-[#2a2522] to-[#1c1917]"
       />
       {showImage ? (
         <Image
@@ -32,10 +32,10 @@ export function LegalHero({ doc }: { doc: LegalDocument }) {
       ) : null}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/92 via-black/70 to-black/30"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
       />
 
-      <Container className="flex min-h-[24rem] flex-col justify-center py-16 lg:min-h-[28rem] lg:py-20">
+      <Container className="flex min-h-[28rem] flex-col justify-end py-16 lg:min-h-[32rem] lg:py-20">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/75">
             <li>

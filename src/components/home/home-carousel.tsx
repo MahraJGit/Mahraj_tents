@@ -138,7 +138,7 @@ export function HomeCarousel({
         <button
           type="button"
           onClick={() => scroll(-1)}
-          className="inline-flex size-8 items-center justify-center rounded-full bg-brand text-white transition-colors hover:bg-brand-dark"
+          className="inline-flex size-10 items-center justify-center rounded-full bg-brand text-white shadow-soft transition-colors hover:bg-brand-dark"
           aria-label={prevLabel}
         >
           <ArrowLeft className="size-4" />
@@ -146,7 +146,7 @@ export function HomeCarousel({
         <button
           type="button"
           onClick={() => scroll(1)}
-          className="inline-flex size-8 items-center justify-center rounded-full bg-brand text-white transition-colors hover:bg-brand-dark"
+          className="inline-flex size-10 items-center justify-center rounded-full bg-brand text-white shadow-soft transition-colors hover:bg-brand-dark"
           aria-label={nextLabel}
         >
           <ArrowRight className="size-4" />

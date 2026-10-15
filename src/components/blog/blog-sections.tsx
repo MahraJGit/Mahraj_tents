@@ -157,7 +157,7 @@ export function WorkingOnSection() {
 
 export function BlogPostCard({ post }: { post: BlogCard }) {
   return (
-    <article className="group h-full overflow-hidden rounded-md border border-border bg-background transition-colors hover:border-brand">
+    <article className="group h-full overflow-hidden rounded-xl bg-card shadow-soft ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:hover:translate-y-0">
       <Link href={post.href} className="block">
         <div className="relative">
           <Media

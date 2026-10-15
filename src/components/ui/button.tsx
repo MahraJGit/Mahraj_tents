@@ -19,10 +19,10 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
-        brand: "bg-brand text-white hover:bg-brand-dark",
-        brandDark: "bg-brand-dark text-white hover:bg-brand",
+        brand: "bg-brand text-white shadow-soft hover:bg-brand-dark",
+        brandDark: "bg-brand-dark text-white shadow-soft hover:bg-brand",
         brandOutline:
-          "border-brand/40 text-brand hover:border-brand hover:bg-brand hover:text-white",
+          "border-brand/35 bg-transparent text-brand hover:border-brand hover:bg-brand hover:text-white",
         inverse: "bg-white text-ink hover:bg-white/90",
         inverseOutline:
           "border-white/50 text-white hover:border-white hover:bg-white hover:text-ink",

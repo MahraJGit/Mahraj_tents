@@ -14,10 +14,14 @@ export function PageHero({
   breadcrumb?: { label: string; href: string }[];
 }) {
   return (
-    <section className="border-b border-border bg-surface-alt">
-      <Container className="py-14 lg:py-20">
+    <section className="relative overflow-hidden border-b border-border bg-sand">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 end-0 w-1/2 bg-[radial-gradient(circle_at_top_right,rgb(194_79_50/0.12),transparent_58%)]"
+      />
+      <Container className="relative py-16 lg:py-24">
         {breadcrumb?.length ? (
-          <nav aria-label="Breadcrumb" className="mb-4">
+          <nav aria-label="Breadcrumb" className="mb-5">
             <ol className="flex flex-wrap items-center gap-1.5 text-xs text-body">
               <li>
                 <Link href="/" className="transition-colors hover:text-brand">
@@ -40,11 +44,12 @@ export function PageHero({
         ) : null}
 
         <FadeIn>
-          <h1 className="font-heading text-3xl font-semibold sm:text-4xl lg:text-[2.75rem]">
+          <span aria-hidden className="mb-4 block h-0.5 w-10 bg-brand" />
+          <h1 className="max-w-4xl font-heading text-4xl font-semibold leading-[1.12] sm:text-5xl lg:text-6xl">
             {title}
           </h1>
           {description ? (
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-body">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-body sm:text-lg">
               {description}
             </p>
           ) : null}

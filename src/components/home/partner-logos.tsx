@@ -10,7 +10,7 @@ export function PartnerLogos({ className }: { className?: string }) {
         {labels.slice(0, trustPartnerLogos.length).map((label) => (
           <li
             key={label}
-            className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-body"
+            className="rounded-full border border-border bg-sand px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-body"
           >
             {label}
           </li>

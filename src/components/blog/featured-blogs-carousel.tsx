@@ -52,10 +52,10 @@ export function FeaturedBlogsCarousel({
 
   return (
     <>
-      <article className="mt-10 grid items-center gap-7 rounded-md border border-border bg-background p-5 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+      <article className="mt-10 grid items-center gap-7 rounded-2xl bg-card p-5 shadow-soft ring-1 ring-border lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:p-7">
         <Link
           href={current.href}
-          className="relative block overflow-hidden rounded-md"
+          className="relative block overflow-hidden rounded-xl"
           aria-label={current.title}
         >
           {isManagedAsset(current.image) ? (

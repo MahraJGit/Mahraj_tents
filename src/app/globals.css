@@ -13,12 +13,18 @@
 
   --color-brand: var(--brand);
   --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
   --color-ink: var(--ink);
   --color-charcoal: var(--charcoal);
   --color-body: var(--body-text);
   --color-surface-alt: var(--surface-alt);
+  --color-ivory: var(--ivory);
+  --color-sand: var(--sand);
+  --color-gold: var(--accent-gold);
 
   --container-site: 80rem;
+  --shadow-soft: 0 14px 36px -20px rgb(28 25 23 / 0.28);
+  --shadow-lift: 0 26px 52px -22px rgb(28 25 23 / 0.34);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -68,18 +74,24 @@
 }
 
 :root {
-  --brand: #c8102e;
-  --brand-dark: #8c1024;
-  --ink: #16181b;
-  --charcoal: #262a2e;
-  --body-text: #5c6066;
-  --surface-alt: #f4f5f6;
+  --brand: #c24f32;
+  --brand-dark: #8a3220;
+  --brand-soft: #f3ddd4;
+  --ink: #1c1917;
+  --charcoal: #2a2522;
+  --body-text: #5e5650;
+  --ivory: #fbf8f3;
+  --sand: #f1eae0;
+  --surface-alt: #f1eae0;
+  --accent-gold: #b8894a;
+  --elevation-soft: 0 14px 36px -20px rgb(28 25 23 / 0.28);
+  --elevation-lift: 0 26px 52px -22px rgb(28 25 23 / 0.34);
 
-  --background: #ffffff;
+  --background: #fbf8f3;
   --foreground: var(--ink);
-  --card: #ffffff;
+  --card: #fffdf9;
   --card-foreground: var(--ink);
-  --popover: #ffffff;
+  --popover: #fffdf9;
   --popover-foreground: var(--ink);
   --primary: var(--brand);
   --primary-foreground: #ffffff;
@@ -87,18 +99,18 @@
   --secondary-foreground: var(--ink);
   --muted: var(--surface-alt);
   --muted-foreground: var(--body-text);
-  --accent: var(--surface-alt);
+  --accent: var(--brand-soft);
   --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #e4e6e8;
-  --input: #d9dcdf;
+  --border: #e4d9cc;
+  --input: #d8cdc0;
   --ring: var(--brand);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.375rem;
+  --radius: 0.5rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -165,6 +177,8 @@
 /* Same-colored sections were stacking full padding and leaving a large empty band. */
 section[data-section].bg-surface-alt + section[data-section].bg-surface-alt,
 section[data-section].bg-background + section[data-section].bg-background,
+section[data-section].bg-ivory + section[data-section].bg-ivory,
+section[data-section].bg-sand + section[data-section].bg-sand,
 section[data-section].bg-charcoal + section[data-section].bg-charcoal,
 section[data-section].bg-brand-dark + section[data-section].bg-brand-dark {
   padding-top: 0;

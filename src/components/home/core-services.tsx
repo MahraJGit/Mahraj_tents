@@ -11,24 +11,29 @@ export function CoreServices() {
     <Section tone="alt">
       <SectionHeading
         align="center"
-        eyebrow="Our Working Process"
+        eyebrow="Our working process"
         title="How a tent project is delivered"
       />
 
-      <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {coreServices.map(({ title, subtitle, icon: Icon }, index) => (
           <StaggerItem
             key={`${title}-${index}`}
-            className="rounded-md border border-border bg-background p-6 text-center transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm motion-reduce:hover:translate-y-0"
+            className="relative rounded-xl bg-card px-6 py-8 text-center shadow-soft ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lift motion-reduce:hover:translate-y-0"
           >
-            <Icon className="mx-auto size-8 text-brand" />
-            <h3 className="mt-4 text-sm font-semibold text-ink">{title}</h3>
-            <p className="mt-2 text-xs text-body">{subtitle}</p>
+            <span className="font-heading text-4xl font-semibold text-brand/20">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span className="mx-auto mt-3 flex size-12 items-center justify-center rounded-full bg-brand-soft text-brand">
+              <Icon className="size-6" />
+            </span>
+            <h3 className="mt-5 text-lg font-semibold text-ink">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-body">{subtitle}</p>
           </StaggerItem>
         ))}
       </Stagger>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-14 flex justify-center">
         <Button asChild variant="brandOutline" size="xl">
           <Link href="/services">View tent structures</Link>
         </Button>

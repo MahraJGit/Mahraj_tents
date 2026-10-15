@@ -24,30 +24,30 @@ import { cn } from "@/lib/utils";
 
 function TopBar() {
   return (
-    <div className="hidden border-b border-border bg-surface-alt md:block">
-      <Container className="flex h-9 items-center justify-between gap-6">
+    <div className="hidden bg-charcoal md:block">
+      <Container className="flex h-10 items-center justify-between gap-6">
         <a
           href={site.address.mapsHref}
           target="_blank"
           rel="noreferrer noopener"
-          className="flex items-center gap-1.5 text-xs text-body transition-colors hover:text-brand"
+          className="flex items-center gap-1.5 text-xs text-white/70 transition-colors hover:text-white"
         >
-          <MapPin className="size-3.5 shrink-0" />
+          <MapPin className="size-3.5 shrink-0 text-brand-soft" />
           {site.address.line1}, {site.address.line2}
         </a>
         <div className="flex items-center gap-6">
           <a
             href={site.phoneHref}
-            className="flex items-center gap-1.5 text-xs text-body transition-colors hover:text-brand"
+            className="flex items-center gap-1.5 text-xs text-white/70 transition-colors hover:text-white"
           >
-            <Phone className="size-3.5" />
+            <Phone className="size-3.5 text-brand-soft" />
             {site.phone}
           </a>
           <a
             href={`mailto:${site.email}`}
-            className="flex items-center gap-1.5 text-xs text-body transition-colors hover:text-brand"
+            className="flex items-center gap-1.5 text-xs text-white/70 transition-colors hover:text-white"
           >
-            <Mail className="size-3.5" />
+            <Mail className="size-3.5 text-brand-soft" />
             {site.email}
           </a>
         </div>
@@ -84,10 +84,13 @@ export function SiteHeader({
   }
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-40 bg-background">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-40 bg-ivory/95 shadow-soft backdrop-blur-md"
+    >
       <TopBar />
-      <div className="relative border-b border-border">
-        <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
+      <div className="relative border-b border-border/80">
+        <Container className="flex h-[4.25rem] items-center justify-between gap-4 lg:h-[4.75rem]">
           <Logo />
 
           <NavigationMenu
@@ -101,7 +104,7 @@ export function SiteHeader({
                   <NavigationMenuItem key={item.href} className="static">
                     <NavigationMenuTrigger
                       className={cn(
-                        "text-[0.9375rem] font-medium text-ink",
+                        "bg-transparent text-[0.9375rem] font-medium text-ink hover:bg-sand",
                         isActive(item.href) && "text-brand"
                       )}
                     >
@@ -109,7 +112,7 @@ export function SiteHeader({
                     </NavigationMenuTrigger>
                     <NavigationMenuContent
                       style={{ top: menuTop }}
-                      className="fixed inset-x-0 z-50 mx-auto mt-0 w-[min(80rem,calc(100%-4rem))] max-w-none overflow-visible rounded-b-xl border border-border bg-popover p-0 shadow-[0_28px_50px_-28px_rgba(16,16,16,0.45)] ring-0 md:fixed md:inset-x-0 md:mx-auto md:w-[min(80rem,calc(100%-4rem))] group-data-[viewport=false]/navigation-menu:mt-0 group-data-[viewport=false]/navigation-menu:w-[min(80rem,calc(100%-4rem))] group-data-[viewport=false]/navigation-menu:overflow-visible group-data-[viewport=false]/navigation-menu:rounded-b-xl group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:shadow-[0_28px_50px_-28px_rgba(16,16,16,0.45)] group-data-[viewport=false]/navigation-menu:ring-0"
+                      className="fixed inset-x-0 z-50 mx-auto mt-0 w-[min(80rem,calc(100%-4rem))] max-w-none overflow-visible rounded-b-2xl border border-border bg-popover p-0 shadow-lift ring-0 md:fixed md:inset-x-0 md:mx-auto md:w-[min(80rem,calc(100%-4rem))] group-data-[viewport=false]/navigation-menu:mt-0 group-data-[viewport=false]/navigation-menu:w-[min(80rem,calc(100%-4rem))] group-data-[viewport=false]/navigation-menu:overflow-visible group-data-[viewport=false]/navigation-menu:rounded-b-2xl group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:shadow-lift group-data-[viewport=false]/navigation-menu:ring-0"
                     >
                       <MegaMenuPanel columns={megaMenu} />
                     </NavigationMenuContent>
@@ -120,7 +123,7 @@ export function SiteHeader({
                       asChild
                       active={isActive(item.href)}
                       className={cn(
-                        "h-9 px-2.5 text-[0.9375rem] font-medium text-ink data-active:bg-transparent",
+                        "h-9 bg-transparent px-2.5 text-[0.9375rem] font-medium text-ink data-active:bg-transparent hover:bg-sand",
                         isActive(item.href) && "text-brand"
                       )}
                     >
@@ -133,7 +136,7 @@ export function SiteHeader({
           </NavigationMenu>
 
           <div className="flex items-center gap-1">
-            <Button asChild variant="brand" className="hidden h-10 px-4 sm:inline-flex">
+            <Button asChild variant="brand" className="hidden h-10 px-5 sm:inline-flex">
               <Link href="/contact#quote-form">Request a Quote</Link>
             </Button>
             <MobileNav megaMenu={megaMenu} />

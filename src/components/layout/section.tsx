@@ -13,8 +13,8 @@ const sectionVariants = cva("", {
       brand: "bg-brand-dark text-white",
     },
     spacing: {
-      default: "py-12 md:py-14 lg:py-16",
-      compact: "py-10 md:py-12",
+      default: "py-16 md:py-20 lg:py-24",
+      compact: "py-12 md:py-14",
       none: "",
     },
   },

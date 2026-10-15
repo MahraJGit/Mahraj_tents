@@ -66,34 +66,34 @@ const socialIcons = {
 export function SiteFooter() {
   return (
     <footer>
-      <div className="bg-brand-dark py-4 text-white">
+      <div className="bg-brand py-5 text-white">
         <Container className="flex flex-col items-center justify-between gap-2 sm:flex-row">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em]">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em]">
             Connect with sales today
           </p>
           <a
             href={site.phoneHref}
-            className="font-heading text-lg font-semibold transition-opacity hover:opacity-80"
+            className="font-heading text-2xl font-semibold transition-opacity hover:opacity-80"
           >
             {site.phone}
           </a>
         </Container>
       </div>
 
-      <div className="bg-ink py-14 text-white/70">
+      <div className="bg-charcoal py-16 text-white/65 lg:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+          <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
             <div>
               <Link
                 href="/"
-                className="font-heading text-2xl font-bold text-white transition-opacity hover:opacity-80"
+                className="font-heading text-3xl font-semibold text-white transition-opacity hover:opacity-80"
               >
-                Mahraj <span className="text-brand">Tents</span>
+                Mahraj <span className="text-brand-soft">Tents</span>
               </Link>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed">
+              <p className="mt-5 max-w-xs text-sm leading-relaxed">
                 Clear-span tents for weddings, exhibitions, sport, warehousing, and formal hospitality across the UAE and GCC.
               </p>
-              <div className="mt-6 flex gap-3">
+              <div className="mt-7 flex gap-3">
                 {site.social.map((item) => {
                   const Icon = socialIcons[item.label];
 
@@ -103,7 +103,7 @@ export function SiteFooter() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="flex size-9 items-center justify-center rounded-md border border-white/15 text-white/70 transition-colors hover:border-brand hover:bg-brand hover:text-white"
+                      className="flex size-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-brand hover:bg-brand hover:text-white"
                     >
                       <Icon className="size-4" />
                       <span className="sr-only">{item.label}</span>
@@ -114,15 +114,15 @@ export function SiteFooter() {
             </div>
 
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white">
+              <h3 className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-white">
                 Explore
               </h3>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-6 space-y-3">
                 {exploreLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm transition-colors hover:text-brand"
+                      className="text-sm transition-colors hover:text-brand-soft"
                     >
                       {link.label}
                     </Link>
@@ -132,15 +132,15 @@ export function SiteFooter() {
             </div>
 
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white">
+              <h3 className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-white">
                 Company
               </h3>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-6 space-y-3">
                 {companyLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm transition-colors hover:text-brand"
+                      className="text-sm transition-colors hover:text-brand-soft"
                     >
                       {link.label}
                     </Link>
@@ -150,28 +150,27 @@ export function SiteFooter() {
             </div>
 
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white">
+              <h3 className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-white">
                 Contact Info
               </h3>
-              <ul className="mt-5 space-y-4 text-sm">
+              <ul className="mt-6 space-y-4 text-sm">
                 <li className="flex gap-3">
-                  <MapPin className="mt-0.5 size-4 shrink-0 text-brand" />
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-brand-soft" />
                   <a
                     href={site.address.mapsHref}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="transition-colors hover:text-brand"
+                    className="transition-colors hover:text-brand-soft"
                   >
                     {site.address.line1}, {site.address.line2}
-                    {/* {site.address.line3} */}
                   </a>
                 </li>
                 <li className="flex gap-3">
-                  <Mail className="mt-0.5 size-4 shrink-0 text-brand" />
+                  <Mail className="mt-0.5 size-4 shrink-0 text-brand-soft" />
                   <span>
                     <a
                       href={`mailto:${site.email}`}
-                      className="transition-colors hover:text-brand"
+                      className="transition-colors hover:text-brand-soft"
                     >
                       {site.email}
                     </a>
@@ -181,7 +180,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
+          <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 sm:flex-row">
             <p className="text-xs">
               &copy; {new Date().getFullYear()} {site.name}. All Rights
               Reserved.
@@ -191,7 +190,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-xs transition-colors hover:text-brand"
+                    className="text-xs transition-colors hover:text-brand-soft"
                   >
                     {link.label}
                   </Link>

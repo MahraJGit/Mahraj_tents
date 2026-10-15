@@ -31,13 +31,15 @@ export function TechnicalFaqForm({
       <div
         className={
           showFaqs
-            ? "grid items-start gap-6 py-12 lg:grid-cols-2"
-            : "grid items-start gap-6 py-12"
+            ? "grid items-start gap-10 py-16 lg:grid-cols-2 lg:gap-14 lg:py-20"
+            : "grid items-start gap-10 py-16 lg:py-20"
         }
       >
         {showFaqs ? (
           <div>
-            <h2 className="text-2xl font-semibold sm:text-3xl">Frequently Asked Questions</h2>
+            <h2 className="font-heading text-4xl font-semibold sm:text-5xl">
+              Frequently asked questions
+            </h2>
             {faqIntro ? (
               <p className="mt-4 text-sm leading-relaxed text-body">{faqIntro}</p>
             ) : null}
@@ -62,8 +64,8 @@ export function TechnicalFaqForm({
           </div>
         ) : null}
 
-        <div className={showFaqs ? "rounded-md bg-background p-8 shadow-sm ring-1 ring-border" : "max-w-xl rounded-md bg-background p-8 shadow-sm ring-1 ring-border"}>
-          <h3 className="text-xl font-semibold uppercase tracking-[0.04em] sm:text-2xl">
+        <div className={showFaqs ? "rounded-2xl bg-card p-8 shadow-soft ring-1 ring-border lg:p-10" : "max-w-xl rounded-2xl bg-card p-8 shadow-soft ring-1 ring-border lg:p-10"}>
+          <h3 className="font-heading text-2xl font-semibold sm:text-3xl">
             {formTitle}
           </h3>
           <EnquiryForm idPrefix={formIdPrefix} className="mt-6" />

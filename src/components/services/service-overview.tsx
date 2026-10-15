@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
+import { OfferingCard } from "@/components/cards/offering-card";
 import { Media } from "@/components/media";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/layout/section-heading";
@@ -25,31 +25,16 @@ export function ExploreServices({
         title="Other structures in this range"
       />
 
-      <ul className="mt-10 grid gap-5 md:grid-cols-3">
+      <ul className="mt-14 grid gap-6 md:grid-cols-3">
         {related.map((item) => (
-          <li
-            key={item.slug}
-            className="overflow-hidden rounded-md border border-border bg-background"
-          >
-            <Media
-              src={item.image}
-              alt={item.imageAlt}
-              className="aspect-16/10"
-              sizes="(min-width: 768px) 30vw, 90vw"
+          <li key={item.slug}>
+            <OfferingCard
+              href={item.href}
+              image={item.image}
+              imageAlt={item.imageAlt}
+              title={item.title}
+              excerpt={item.excerpt}
             />
-            <div className="p-5">
-              <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
-              <p className="mt-2 min-h-12 text-sm leading-relaxed text-body">
-                {item.excerpt}
-              </p>
-              <Link
-                href={item.href}
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand-dark"
-              >
-                Explore Solution
-                <ArrowRight className="size-4" />
-              </Link>
-            </div>
           </li>
         ))}
       </ul>
@@ -70,11 +55,11 @@ export function ServiceOverview({ service }: { service: ServiceDetailView }) {
         <Media
           src={service.overviewImage}
           alt={`${service.title} installation`}
-          className="aspect-4/3 rounded-md"
+          className="aspect-4/3 rounded-xl"
           sizes="20rem"
         />
         <div>
-          <h2 className="text-3xl font-semibold sm:text-4xl">
+          <h2 className="font-heading text-4xl font-semibold sm:text-5xl">
             {service.overviewTitle}
           </h2>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-body sm:text-base">
@@ -98,7 +83,7 @@ export function ServiceGuide({ service }: { service: ServiceDetailView }) {
         description={service.guideDescription}
       />
 
-      <ul className="mt-10 grid overflow-hidden rounded-md border border-border md:grid-cols-3">
+      <ul className="mt-12 grid overflow-hidden rounded-xl border border-border md:grid-cols-3">
         {service.applications.map((application, index) => {
           const Icon = highlightIcon(application.icon, index);
 

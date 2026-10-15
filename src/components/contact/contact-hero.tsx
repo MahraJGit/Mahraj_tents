@@ -22,7 +22,7 @@ export function ContactHero() {
       <div className="absolute inset-0 overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-br from-neutral-700 via-neutral-800 to-neutral-900"
+          className="absolute inset-0 bg-gradient-to-br from-[#3a2a24] via-[#2a2522] to-[#1c1917]"
         />
 
         {showHeroImage ? (
@@ -39,7 +39,7 @@ export function ContactHero() {
         
       </div>
 
-      <Container className="relative z-10 flex min-h-[26rem] flex-col pb-40 pt-20 lg:min-h-[30rem] lg:pb-44 lg:pt-24">
+      <Container className="relative z-10 flex min-h-[30rem] flex-col justify-end pb-40 pt-20 lg:min-h-[36rem] lg:pb-44 lg:pt-24">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/75">
             <li>
@@ -55,7 +55,7 @@ export function ContactHero() {
         </nav>
 
         <FadeIn>
-          <h1 className="mt-10 max-w-[34rem] font-heading text-3xl font-semibold leading-[1.15] text-white sm:text-4xl lg:max-w-[38rem] lg:text-[2.5rem]">
+          <h1 className="mt-10 max-w-[38rem] font-heading text-5xl font-semibold leading-[1.08] text-white sm:text-6xl lg:max-w-[42rem]">
             {contactHero.title}
           </h1>
         </FadeIn>
