@@ -237,8 +237,8 @@ export const termsDocument: LegalDocument = {
       title: "Contact Our Commercial Team",
       paragraphs: [],
       bullets: [
-        "Email: bthomas@mahraj.com",
-        "Phone: +971 50 882 0457",
+        "Email: Tents@mahraj.com",
+        "Phone: +971 55 765 7570",
       ],
     },
   ],
@@ -255,7 +255,7 @@ export const privacyDocument: LegalDocument = {
   highlights: [
     { label: "Last Updated", value: "23 September 2026" },
     { label: "Information Collected", value: "Enquiries & project details" },
-    { label: "Privacy Questions", value: "bthomas@mahraj.com" },
+    { label: "Privacy Questions", value: "Tents@mahraj.com" },
   ],
   keyPointsTitle: "How We Use Your Data",
   keyPointsDescription:
@@ -299,8 +299,8 @@ export const privacyDocument: LegalDocument = {
       id: "who-we-are",
       title: "Who Manages Your Data",
       paragraphs: [
-        "Mahraj Tents is responsible for the personal data collected through our website and enquiry channels. We're based at 22nd Floor, B2B Tower, Business Bay, Dubai, UAE.",
-        'Got a privacy question or request? Email bthomas@mahraj.com with the subject "Privacy Request," and we\'ll get back to you promptly.',
+        "Mahraj Tents is responsible for the personal data collected through our website and enquiry channels. We're based at 2204, B2B Tower, Business Bay, Dubai.",
+        'Got a privacy question or request? Email Tents@mahraj.com with the subject "Privacy Request," and we\'ll get back to you promptly.',
       ],
     },
     {
@@ -444,9 +444,9 @@ export const privacyDocument: LegalDocument = {
         "Have a question or request about your personal data? We're happy to help.",
       ],
       bullets: [
-        "Email: bthomas@mahraj.com",
-        "Phone: +971 50 882 0457",
-        "Address: 22nd Floor, B2B Tower, Business Bay, Dubai, UAE",
+        "Email: Tents@mahraj.com",
+        "Phone: +971 55 765 7570",
+        "Address: 2204, B2B Tower, Business Bay, Dubai",
       ],
     },
   ],

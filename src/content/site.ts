@@ -4,17 +4,17 @@ export const site = {
   description:
     "Mahraj Tents designs, supplies, and installs clear-span tents for weddings, exhibitions, sports, warehousing, Ramadan hospitality, and aviation sites.",
   url: "https://mahrajtents.com",
-  phone: "+97150 882 0457",
-  phoneHref: "tel:+971508820457",
-  email: "bthomas@mahraj.com",
-  whatsapp: "https://wa.me/971508820457",
+  phone: "+971 55 765 7570",
+  phoneHref: "tel:+971557657570",
+  email: "Tents@mahraj.com",
+  whatsapp: "https://wa.me/971557657570",
   address: {
-    line1: "22nd Floor, B2B Tower",
-    line2: "Business Bay, Dubai, UAE",
+    line1: "2204, B2B Tower",
+    line2: "Business Bay, Dubai",
     mapsHref:
-      "https://www.google.com/maps/search/?api=1&query=B2B+Tower+Business+Bay+Dubai",
+      "https://www.google.com/maps/search/?api=1&query=2204+B2B+Tower+Business+Bay+Dubai",
     mapsEmbed:
-      "https://maps.google.com/maps?q=B2B+Tower+Business+Bay+Dubai&z=16&output=embed",
+      "https://maps.google.com/maps?q=2204+B2B+Tower+Business+Bay+Dubai&z=16&output=embed",
   },
   social: [
     { label: "Instagram", href: "https://www.instagram.com/mahrajtents/" },

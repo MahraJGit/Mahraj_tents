@@ -38,7 +38,7 @@ export function RegionalPowerhouse() {
             </h3>
             <div className="overflow-hidden rounded-xl ring-1 ring-border">
               <iframe
-                title="Mahraj Tents, B2B Tower, Business Bay, Dubai"
+                title="Mahraj Tents, 2204 B2B Tower, Business Bay, Dubai"
                 src={site.address.mapsEmbed}
                 className="aspect-[16/10] w-full border-0"
                 loading="lazy"

@@ -9,7 +9,7 @@ export function CurrentLocation() {
 
       <div className="mt-10 overflow-hidden rounded-md border border-border shadow-sm">
         <iframe
-          title="Mahraj Tents, Business Bay, Dubai"
+          title="Mahraj Tents, 2204 B2B Tower, Business Bay, Dubai"
           src={currentLocation.embedUrl}
           className="aspect-[16/7] w-full border-0 sm:aspect-[16/6]"
           loading="lazy"
