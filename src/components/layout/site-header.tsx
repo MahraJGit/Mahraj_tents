@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
@@ -64,6 +64,7 @@ export function SiteHeader({
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const [menuTop, setMenuTop] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useLayoutEffect(() => {
     const header = headerRef.current;
@@ -79,6 +80,13 @@ export function SiteHeader({
     };
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   function isActive(href: string) {
     return href === "/" ? pathname === "/" : pathname.startsWith(href);
   }
@@ -86,11 +94,14 @@ export function SiteHeader({
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-40 bg-ivory/95 shadow-soft backdrop-blur-md"
+      className={cn(
+        "sticky top-0 z-40 bg-ivory/95 backdrop-blur-md transition-shadow duration-300",
+        scrolled ? "shadow-lift" : "shadow-soft"
+      )}
     >
       <TopBar />
       <div className="relative border-b border-border/80">
-        <Container className="flex h-[4.25rem] items-center justify-between gap-4 lg:h-[4.75rem]">
+        <Container className="flex h-[4.25rem] items-center justify-between gap-3 lg:h-[4.75rem] lg:gap-4">
           <Logo />
 
           <NavigationMenu
@@ -135,9 +146,16 @@ export function SiteHeader({
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center gap-1">
-            <Button asChild variant="brand" className="hidden h-10 px-5 sm:inline-flex">
-              <Link href="/contact#quote-form">Request a Quote</Link>
+          <div className="flex items-center gap-1.5">
+            <Button
+              asChild
+              variant="brand"
+              className="h-9 px-3 text-xs sm:h-10 sm:px-5 sm:text-sm"
+            >
+              <Link href="/contact#quote-form">
+                <span className="sm:hidden">Quote</span>
+                <span className="hidden sm:inline">Request a Quote</span>
+              </Link>
             </Button>
             <MobileNav megaMenu={megaMenu} />
           </div>

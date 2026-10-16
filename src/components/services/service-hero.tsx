@@ -68,9 +68,14 @@ export function ServiceHero({ service }: { service: ServiceDetailView }) {
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75">
             {service.heroDescription}
           </p>
-          <Button asChild variant="brand" size="xl" className="mt-8">
-            <Link href="/contact#quote-form">Request a Quote</Link>
-          </Button>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button asChild variant="brand" size="xl">
+              <Link href="/contact#quote-form">Request a specification</Link>
+            </Button>
+            <Button asChild variant="inverseOutline" size="xl">
+              <Link href="/projects">See similar projects</Link>
+            </Button>
+          </div>
         </FadeIn>
       </Container>
     </section>

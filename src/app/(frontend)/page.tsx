@@ -1,5 +1,5 @@
 import { CoreServices } from "@/components/home/core-services";
-// import { FeaturedCaseStudies } from "@/components/home/featured-case-studies";
+import { FeaturedCaseStudies } from "@/components/home/featured-case-studies";
 import { TentRange } from "@/components/home/tent-range";
 import { Hero } from "@/components/home/hero";
 import { IndustriesGrid } from "@/components/home/industries-grid";
@@ -12,12 +12,15 @@ export default function Home() {
     <>
       <Hero />
       <TentRange />
+      <FeaturedCaseStudies />
       <CoreServices />
-      {/* <FeaturedCaseStudies /> */}
       <IndustriesGrid />
       <RegionalPowerhouse />
       <TechnicalInsights />
-      <TechnicalFaqForm />
+      <TechnicalFaqForm
+        formTitle="Tell us about the site"
+        faqIntro="Questions about hire, span, and installation. If yours is not here, send the date and the ground."
+      />
     </>
   );
 }

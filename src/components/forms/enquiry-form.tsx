@@ -45,7 +45,7 @@ function FieldError({ message }: { message?: string }) {
 
 export function EnquiryForm({
   idPrefix = "enquiry",
-  submitLabel = "Submit",
+  submitLabel = "Request a specification",
   className,
   requirePhone = true,
 }: {
@@ -83,10 +83,10 @@ export function EnquiryForm({
   if (submitted) {
     return (
       <div className={cn("flex flex-col items-start justify-center", className)}>
-        <h3 className="text-xl font-semibold">Request received</h3>
+        <h3 className="font-heading text-2xl font-semibold">Request received</h3>
         <p className="mt-3 text-sm leading-relaxed text-body">
-          Thank you. Our technical team will review your project brief and respond
-          within 24 hours.
+          Thank you. We will review the brief and reply within one working day with
+          a structure and the next site step.
         </p>
         <Button
           variant="brandOutline"
@@ -213,7 +213,7 @@ export function EnquiryForm({
           id={`${idPrefix}-brief`}
           name="brief"
           rows={4}
-          placeholder="Date, location, and what the tent is for..."
+            placeholder="Date, location, guest count or use, and hire or purchase..."
           value={values.brief}
           onChange={(e) => update("brief", e.target.value)}
           aria-invalid={Boolean(errors.brief)}
@@ -225,6 +225,9 @@ export function EnquiryForm({
       <Button type="submit" variant="brand" size="xl" className="w-full">
         {submitLabel}
       </Button>
+      <p className="text-center text-xs text-body">
+        No obligation. We confirm span, access, and programme before a price is final.
+      </p>
     </form>
   );
 }

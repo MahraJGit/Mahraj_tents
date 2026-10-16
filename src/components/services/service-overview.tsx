@@ -49,24 +49,39 @@ export function ExploreServices({
 }
 
 export function ServiceOverview({ service }: { service: ServiceDetailView }) {
+  const highlights = service.applications[0]?.points ?? [];
+
   return (
     <Section tone="alt">
-      <div className="grid items-center gap-10 lg:grid-cols-[20rem_minmax(0,1fr)]">
+      <div className="grid items-center gap-10 lg:grid-cols-2">
         <Media
           src={service.overviewImage}
           alt={`${service.title} installation`}
-          className="aspect-4/3 rounded-xl"
-          sizes="20rem"
+          className="aspect-[4/3] rounded-xl"
+          sizes="(min-width: 1024px) 46vw, 90vw"
         />
         <div>
-          <h2 className="font-heading text-4xl font-semibold sm:text-5xl">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-brand">
+            {service.title}
+          </p>
+          <h2 className="mt-3 font-heading text-4xl font-semibold sm:text-5xl">
             {service.overviewTitle}
           </h2>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-body sm:text-base">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-body">
             {service.overviewDescription}
           </p>
-          <Button asChild variant="brand" size="xl" className="mt-7">
-            <Link href="/contact#get-in-touch">View Installation</Link>
+          {highlights.length > 0 ? (
+            <ul className="mt-6 space-y-2.5">
+              {highlights.map((point) => (
+                <li key={point} className="flex items-start gap-3 text-sm text-ink">
+                  <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <Button asChild variant="brand" size="xl" className="mt-8">
+            <Link href="/contact#quote-form">Request this structure</Link>
           </Button>
         </div>
       </div>

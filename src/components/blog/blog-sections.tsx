@@ -36,8 +36,13 @@ export function ExploreByTopic({ categories }: { categories: BlogCategory[] }) {
 
   return (
     <Section>
-      <SectionHeading title="Explore by Topic" />
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <SectionHeading className="gap-4" title="Explore by Topic" />
+      <ul
+        className={cn(
+          "mt-8 grid gap-4 sm:grid-cols-2",
+          categories.length >= 5 ? "lg:grid-cols-5" : "lg:grid-cols-4"
+        )}
+      >
         {categories.map((topic) => {
           const hasArticles = topic.postCount > 0;
           const href = `/blog?category=${topic.slug}#latest-insights`;
@@ -51,15 +56,17 @@ export function ExploreByTopic({ categories }: { categories: BlogCategory[] }) {
               <Media
                 src={topic.image}
                 alt={topic.title}
-                className="aspect-[6/5] transition-transform duration-500 group-hover:scale-105"
-                sizes="(min-width: 1024px) 18vw, (min-width: 640px) 45vw, 90vw"
+                className="aspect-[16/10] transition-transform duration-500 group-hover:scale-105"
+                sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 90vw"
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"
               />
-              <div className="absolute inset-x-0 bottom-0 p-3 text-white">
-                <h3 className="text-lg font-semibold text-white">{topic.title}</h3>
+              <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                <h3 className="font-heading text-xl font-semibold text-white">
+                  {topic.title}
+                </h3>
                 {topic.subtitle ? (
                   <p className="mt-1 text-xs text-white/75">{topic.subtitle}</p>
                 ) : null}
@@ -67,9 +74,9 @@ export function ExploreByTopic({ categories }: { categories: BlogCategory[] }) {
                   {hasArticles ? countLabel : "No articles yet"}
                 </p>
                 {hasArticles ? (
-                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-colors group-hover:text-brand">
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-colors group-hover:text-brand-soft">
                     View articles
-                    <ArrowRight className="size-4" />
+                    <ArrowRight className="size-3.5" />
                   </span>
                 ) : null}
               </div>
@@ -80,7 +87,7 @@ export function ExploreByTopic({ categories }: { categories: BlogCategory[] }) {
             <li
               key={topic.id}
               className={cn(
-                "group relative overflow-hidden rounded-md",
+                "group relative overflow-hidden rounded-xl shadow-soft ring-1 ring-border",
                 !hasArticles && "opacity-80"
               )}
             >

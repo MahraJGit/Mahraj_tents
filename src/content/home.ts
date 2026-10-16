@@ -23,9 +23,9 @@ export const heroImage = tentImages.hero;
 export const heroVideo = "/videos/hero/hero-video.mp4";
 
 export const heroCopy = {
-  title: "Tents for weddings, exhibitions, sport, and working cover across the Gulf",
+  title: "Clear-span tents for Gulf events and working cover",
   description:
-    "Mahraj Tents designs, supplies, and installs clear-span structures for celebrations, expos, sports, warehousing, and formal hospitality. Aluminum frames and heavy-duty PVC, specified for Gulf sun, wind, and fast turnarounds.",
+    "Hire or purchase a finished structure for a wedding, exhibition, sports cover, or yard. Surveyed, specified, and installed by one crew.",
 };
 
 export const heroHighlights = [
@@ -33,6 +33,13 @@ export const heroHighlights = [
   { icon: Tent, label: "Supply" },
   { icon: Wrench, label: "Install" },
   { icon: Headphones, label: "Support" },
+];
+
+export const heroStats = [
+  { value: "150+", label: "Structures delivered" },
+  { value: "UAE & KSA", label: "Where we install" },
+  { value: "Hire or buy", label: "Confirmed in the quote" },
+  { value: "4.8", label: "Average client rating" },
 ];
 
 export type Industry = {

@@ -13,14 +13,15 @@ export async function TentRange() {
   return (
     <Section>
       <SectionHeading
+        className="gap-5 md:gap-6"
         eyebrow="Tent solutions"
         title="Structures for the way the site is used"
-        description="Hire or purchase a tent for a wedding, an exhibition, a sports cover, a Ramadan gathering, or a working yard. Each one is a clear-span structure, sized after a survey."
+        description="Hire or purchase a tent for a wedding, an exhibition, a sports cover, a Ramadan gathering, or a working yard. Each one is sized after a survey."
       />
 
-      <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <Stagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-10 xl:grid-cols-3">
         {services.map((service) => (
-          <StaggerItem key={service.slug}>
+          <StaggerItem key={service.slug} className="h-full">
             <OfferingCard
               href={service.href}
               image={service.image}
@@ -32,7 +33,7 @@ export async function TentRange() {
         ))}
       </Stagger>
 
-      <div className="mt-14 flex justify-center">
+      <div className="mt-8 flex justify-center lg:mt-10">
         <Button asChild variant="brandOutline" size="xl">
           <Link href="/services">View all tents</Link>
         </Button>

@@ -1,6 +1,6 @@
 import { Palette } from "lucide-react";
 
-import { Media } from "@/components/media";
+import { ProjectCard } from "@/components/cards/project-card";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/layout/section-heading";
 import { projects } from "@/content/home";
@@ -28,7 +28,7 @@ export function PerformanceMatrix({ service }: { service: ServiceDetailView }) {
         }`}
       >
         <div>
-          <div className="overflow-x-auto rounded-md border border-border">
+          <div className="overflow-x-auto rounded-xl border border-border">
             <table className="w-full min-w-[32rem] text-start text-sm">
               <thead className="bg-surface-alt text-xs uppercase tracking-[0.1em] text-body">
                 <tr>
@@ -60,13 +60,13 @@ export function PerformanceMatrix({ service }: { service: ServiceDetailView }) {
           {service.density || service.warranty ? (
             <div className="mt-4 grid grid-cols-2 gap-4">
               {service.density ? (
-                <div className="rounded-md bg-surface-alt p-5">
+                <div className="rounded-xl bg-surface-alt p-5">
                   <p className="text-xs uppercase tracking-[0.12em] text-body">Structure</p>
                   <p className="mt-2 text-lg font-semibold text-ink">{service.density}</p>
                 </div>
               ) : null}
               {service.warranty ? (
-                <div className="rounded-md bg-surface-alt p-5">
+                <div className="rounded-xl bg-surface-alt p-5">
                   <p className="text-xs uppercase tracking-[0.12em] text-body">Warranty</p>
                   <p className="mt-2 text-lg font-semibold text-ink">{service.warranty}</p>
                 </div>
@@ -76,7 +76,7 @@ export function PerformanceMatrix({ service }: { service: ServiceDetailView }) {
         </div>
 
         {service.brandingTitle || service.brandingDescription ? (
-        <div className="rounded-md bg-surface-alt p-7">
+        <div className="rounded-xl bg-surface-alt p-7">
           <div className="flex items-start justify-between gap-5">
             <div>
               <h3 className="text-2xl font-semibold text-ink">
@@ -138,38 +138,19 @@ export function ServiceCaseStudies({
         <p className="max-w-2xl text-base leading-relaxed text-body">{description}</p>
       )}
 
-      <ul className="mt-10 grid gap-5 md:grid-cols-3">
-        {projects.slice(0, 3).map((project) => {
-          return (
-            <li
-              key={project.slug}
-              className="overflow-hidden rounded-md border border-border bg-background"
-            >
-              <Media
-                src={project.image}
-                alt={project.title}
-                className="aspect-4/3"
-                sizes="(min-width: 768px) 30vw, 90vw"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-ink">{project.title}</h3>
-                <div className="mt-4 flex items-end justify-between gap-4">
-                  <p className="font-heading text-lg font-semibold text-ink">
-                    {project.product}
-                  </p>
-                  <p className="text-xs text-body">{project.location}</p>
-                </div>
-                {/* View detail CTA removed at client request.
-                <Button asChild variant="brand" size="lg" className="mt-5 w-full">
-                  <Link href={`/projects/${project.slug}`}>
-                    View Project Details
-                  </Link>
-                </Button>
-                */}
-              </div>
-            </li>
-          );
-        })}
+      <ul className="mt-10 grid gap-6 md:grid-cols-3">
+        {projects.slice(0, 3).map((project) => (
+          <li key={project.slug}>
+            <ProjectCard
+              href={`/projects/${project.slug}`}
+              image={project.image}
+              title={project.title}
+              location={project.location}
+              application={project.application}
+              product={project.product}
+            />
+          </li>
+        ))}
       </ul>
     </Section>
   );

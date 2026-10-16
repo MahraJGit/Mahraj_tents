@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 
 import { HashScroll } from "@/components/layout/hash-scroll";
+import { MobileActions } from "@/components/layout/mobile-actions";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
@@ -51,7 +52,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body
-        className="flex min-h-full flex-col bg-background text-body"
+        className="flex min-h-full flex-col bg-background pb-16 text-body md:pb-0"
         suppressHydrationWarning
       >
         <HashScroll />
@@ -59,6 +60,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <WhatsAppButton />
+        <MobileActions />
       </body>
     </html>
   );

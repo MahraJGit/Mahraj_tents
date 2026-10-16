@@ -43,7 +43,7 @@ export function MobileNav({ megaMenu }: { megaMenu: MegaMenuColumn[] }) {
           </SheetTitle>
         </SheetHeader>
 
-        <nav className="flex flex-col px-4 pb-4">
+        <nav className="flex flex-col px-4 pb-8">
           {mainNav.map((item) =>
             item.hasMegaMenu ? (
               <Accordion key={item.href} type="single" collapsible>
@@ -57,7 +57,7 @@ export function MobileNav({ megaMenu }: { megaMenu: MegaMenuColumn[] }) {
                         <AccordionItem
                           key={column.title}
                           value={column.title}
-                          className="rounded-md border border-border px-3"
+                          className="rounded-xl border border-border px-3"
                         >
                           <AccordionTrigger className="py-3 text-sm font-semibold text-ink hover:no-underline">
                             {column.title}
@@ -85,7 +85,7 @@ export function MobileNav({ megaMenu }: { megaMenu: MegaMenuColumn[] }) {
                       onClick={close}
                       className="mt-4 inline-block text-sm font-semibold text-brand no-underline"
                     >
-                      View All Services
+                      View all tents
                     </Link>
                   </AccordionContent>
                 </AccordionItem>
@@ -102,19 +102,26 @@ export function MobileNav({ megaMenu }: { megaMenu: MegaMenuColumn[] }) {
             )
           )}
 
-          <div className="mt-6 flex flex-col gap-3">
+          <div className="mt-8 grid gap-3">
             <Button asChild variant="brand" size="xl">
               <Link href="/contact#quote-form" onClick={close}>
-                Request a Quote
+                Request a quote
               </Link>
             </Button>
-            <a
-              href={site.phoneHref}
-              className="flex items-center justify-center gap-2 text-sm font-medium text-body"
-            >
-              <Phone className="size-4 text-brand" />
-              {site.phone}
-            </a>
+            <div className="grid grid-cols-2 gap-3">
+              <Button asChild variant="brandOutline" size="xl">
+                <a href={site.phoneHref}>
+                  <Phone className="size-4" />
+                  Call
+                </a>
+              </Button>
+              <Button asChild variant="brandOutline" size="xl">
+                <a href={site.whatsapp} target="_blank" rel="noreferrer noopener">
+                  WhatsApp
+                </a>
+              </Button>
+            </div>
+            <p className="text-center text-xs text-body">{site.phone}</p>
           </div>
         </nav>
       </SheetContent>

@@ -12,7 +12,7 @@ export function TechnicalFaqForm({
   formIdPrefix = "home",
   faqs = DEFAULT_FAQS,
   faqIntro = "Questions about hire, span, and installation. If yours is not here, send the date and the site.",
-  formTitle = "Technical Expertise",
+  formTitle = "Tell us about the site",
 }: {
   formIdPrefix?: string;
   faqs?: FaqItem[];
@@ -65,10 +65,20 @@ export function TechnicalFaqForm({
         ) : null}
 
         <div className={showFaqs ? "rounded-2xl bg-card p-8 shadow-soft ring-1 ring-border lg:p-10" : "max-w-xl rounded-2xl bg-card p-8 shadow-soft ring-1 ring-border lg:p-10"}>
-          <h3 className="font-heading text-2xl font-semibold sm:text-3xl">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-brand">
+            Request a specification
+          </p>
+          <h3 className="mt-2 font-heading text-2xl font-semibold sm:text-3xl">
             {formTitle}
           </h3>
-          <EnquiryForm idPrefix={formIdPrefix} className="mt-6" />
+          <p className="mt-3 text-sm leading-relaxed text-body">
+            Date, location, and what has to happen inside is enough. We reply with a structure and whether hire or purchase fits.
+          </p>
+          <EnquiryForm
+            idPrefix={formIdPrefix}
+            submitLabel="Request a specification"
+            className="mt-7"
+          />
         </div>
       </div>
     </Section>

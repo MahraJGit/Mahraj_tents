@@ -47,9 +47,6 @@ export default async function ServiceDetailPage({
     return (
       <>
         <ServiceHero service={service} />
-        {service.related.length > 0 ? (
-          <ExploreServices service={service} related={service.related} />
-        ) : null}
         {service.overviewTitle || service.overviewDescription ? (
           <ServiceOverview service={service} />
         ) : null}
@@ -72,10 +69,14 @@ export default async function ServiceDetailPage({
         (service.processTitle || service.processDescription || service.processSteps.length > 0) ? (
           <ServiceProcess service={service} />
         ) : null}
+        {service.related.length > 0 ? (
+          <ExploreServices service={service} related={service.related} />
+        ) : null}
         <TechnicalFaqForm
           formIdPrefix={`service-${service.slug}`}
           faqs={service.faqs}
           faqIntro={service.faqIntro}
+          formTitle="Specify this tent"
         />
       </>
     );
