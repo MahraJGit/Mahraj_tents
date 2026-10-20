@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node scripts/seed.mjs",
+    "seed:content": "node scripts/seed-content.mjs",
     "reset:blog": "node scripts/reset-content.mjs --blog",
     "reset:services": "node scripts/reset-content.mjs --services",
     "reset:content": "node scripts/reset-content.mjs --all"

@@ -1,12 +1,12 @@
 export const PERFORMANCE_COLUMN_LABELS = ["Use Case", "Recommended", "Detail"] as const;
 
 export const SPACE_COLUMN_LABELS = [
-  "Use Case",
-  "Recommended",
-  "Impact",
-  "Slip",
-  "Acoustic",
-  "Maintenance",
+  "Use",
+  "Recommendation",
+  "Detail",
+  "Note",
+  "Specification",
+  "Upkeep",
 ] as const;
 
 export function columnLabels(value: unknown, fallback: readonly string[]) {

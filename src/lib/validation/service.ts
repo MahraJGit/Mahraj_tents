@@ -28,17 +28,17 @@ export const applicationSchema = z.object({
 
 export const performanceRowSchema = z.object({
   useCase: z.string().trim().min(1, "Enter a use case."),
-  recommended: z.string().trim().min(1, "Enter a recommended thickness."),
-  forceReduction: z.string().trim().min(1, "Enter force reduction."),
+  recommended: z.string().trim().min(1, "Enter a recommended value."),
+  forceReduction: z.string().trim().min(1, "Enter a detail."),
 });
 
 export const spaceRowSchema = z.object({
   useCase: z.string().trim().min(1, "Enter a use case."),
   recommended: z.string().trim().min(1, "Enter a recommended value."),
-  impact: z.string().trim().min(1, "Enter impact."),
-  slip: z.string().trim().min(1, "Enter slip rating."),
-  acoustic: z.string().trim().min(1, "Enter acoustic rating."),
-  maintenance: z.string().trim().min(1, "Enter maintenance."),
+  impact: z.string().trim().min(1, "Enter a value for this column."),
+  slip: z.string().trim().min(1, "Enter a value for this column."),
+  acoustic: z.string().trim().min(1, "Enter a value for this column."),
+  maintenance: z.string().trim().min(1, "Enter a value for this column."),
 });
 
 export const seoSchema = z.object({

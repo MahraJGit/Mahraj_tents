@@ -670,10 +670,10 @@ export function ServiceForm({
                 />
               </Field>
               <div className="grid gap-3 sm:grid-cols-2">
-                <Field label="Density">
+                <Field label="Structure" hint="Short note shown on the service page, such as Aluminum frame.">
                   <Input value={values.density ?? ""} onChange={(e) => update("density", e.target.value)} />
                 </Field>
-                <Field label="Warranty">
+                <Field label="Warranty note" hint="Short note shown beside the structure, such as Project warranty.">
                   <Input value={values.warranty ?? ""} onChange={(e) => update("warranty", e.target.value)} />
                 </Field>
               </div>
@@ -688,11 +688,11 @@ export function ServiceForm({
               </Field>
               <Field
                 label="Colour selector label"
-                hint="Shown above the swatches, for example EPDM Fleck Selector."
+                hint="Shown above the colour swatches, for example Membrane colour."
               >
                 <Input
                   value={values.brandColorLabel ?? ""}
-                  placeholder="EPDM Fleck Selector"
+                  placeholder="Membrane colour"
                   onChange={(e) => update("brandColorLabel", e.target.value)}
                 />
               </Field>
@@ -844,7 +844,7 @@ export function ServiceForm({
             />
             <span>
               <strong className="block">Detailed comparison</strong>
-              Optional. Use this only when you need extra columns such as impact, slip, acoustics, or maintenance.
+              Optional. Use this only when a service needs a wider comparison table.
             </span>
           </label>
           {values.showSpaceRequirements ? (

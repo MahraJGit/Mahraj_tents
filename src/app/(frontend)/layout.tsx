@@ -23,7 +23,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-// Public pages render from static Mahraj Tents content.
+// Services, blog, and the tent menu render published CMS records. Other pages stay in src/content.
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {

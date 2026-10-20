@@ -1,11 +1,13 @@
+import { toId } from "@/lib/db/ids";
+import { getModels } from "@/lib/db/models";
+import { readBrandColors, type BrandColor } from "@/lib/services/colors";
+import { readFaqIntro, readFaqs } from "@/lib/services/faqs";
+import { readProcessSteps } from "@/lib/services/process";
 import {
-  offeringsByGroup,
-  tentGroups,
-  tentImage,
-  tentOfferings,
-  type TentOffering,
-} from "@/content/tent-catalog";
-import type { BrandColor } from "@/lib/services/colors";
+  PERFORMANCE_COLUMN_LABELS,
+  SPACE_COLUMN_LABELS,
+  columnLabels,
+} from "@/lib/services/table-labels";
 
 export type ServiceCard = {
   id: string;
@@ -103,176 +105,237 @@ export type SearchEntry = {
   group: string;
 };
 
-const PROCESS_STEPS = [
-  { label: "Survey" },
-  { label: "Design" },
-  { label: "Fabricate" },
-  { label: "Install" },
-  { label: "Handover" },
-];
+const FALLBACK_IMAGE = "/images/tents/tent-install.jpg";
+const PUBLISHED = { _status: "published" } as const;
 
-function groupTitle(groupId: string) {
-  return tentGroups.find((group) => group.id === groupId)?.title ?? "";
+type LeanDoc = Record<string, unknown>;
+
+function isRecord(value: unknown): value is LeanDoc {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
-function toCard(item: TentOffering): ServiceCard {
+function text(value: unknown) {
+  return typeof value === "string" ? value : "";
+}
+
+function mediaFrom(value: unknown) {
+  if (!isRecord(value)) return { url: FALLBACK_IMAGE, alt: "" };
+  const url = text(value.url);
+  const usable = url.startsWith("/") || /^https?:\/\//.test(url);
   return {
-    id: item.slug,
-    slug: item.slug,
-    title: item.title,
-    excerpt: item.excerpt,
-    image: tentImage(item.image),
-    imageAlt: item.title,
-    href: `/services/${item.slug}`,
-    parentId: item.groupId,
-    parentTitle: groupTitle(item.groupId),
+    url: usable ? url : FALLBACK_IMAGE,
+    alt: text(value.alt),
   };
 }
 
-function faqsFor(item: TentOffering) {
-  return [
-    {
-      question: `Can a ${item.title.toLowerCase()} be rented as well as purchased?`,
-      answer:
-        "Yes. Most structures are available for short hire, a season, or a longer installation. The quotation states which applies.",
-    },
-    {
-      question: "How long does installation take?",
-      answer:
-        "A compact tent can be up in a day once the site is clear. Larger halls and hangars take longer and are scheduled around venue access.",
-    },
-    {
-      question: "Are the structures specified for Gulf weather?",
-      answer:
-        "Frames are aluminum and membranes are heavy-duty PVC, anchored for the site. Wind, sun, and drainage are part of the specification, not an extra.",
-    },
-    {
-      question: "Can the tent be branded?",
-      answer:
-        "Yes. Valances, gable ends, and selected wall panels can carry colour and branding. We confirm artwork deadlines with the build date.",
-    },
-  ];
+function parentOf(value: unknown) {
+  if (!isRecord(value)) return { id: null as string | null, title: null as string | null };
+  return {
+    id: toId(value._id) || null,
+    title: text(value.title) || null,
+  };
 }
 
-function toDetail(item: TentOffering): ServiceDetailView {
-  const card = toCard(item);
-  const siblings = offeringsByGroup(item.groupId)
-    .filter((sibling) => sibling.slug !== item.slug)
-    .map(toCard);
-  const related = siblings.slice(0, 3);
+function toCard(doc: LeanDoc): ServiceCard {
+  const image = mediaFrom(doc.image);
+  const parent = parentOf(doc.parent);
+  const slug = text(doc.slug);
+  const title = text(doc.title);
+  return {
+    id: toId(doc._id),
+    slug,
+    title,
+    excerpt: text(doc.excerpt),
+    image: image.url,
+    imageAlt: image.alt || title,
+    href: `/services/${slug}`,
+    parentId: parent.id,
+    parentTitle: parent.title,
+  };
+}
 
+function pointLabels(value: unknown) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((point) => {
+      if (typeof point === "string") return point.trim();
+      if (isRecord(point)) return text(point.label).trim();
+      return "";
+    })
+    .filter(Boolean);
+}
+
+function applicationsOf(value: unknown): ServiceApplication[] {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((item) => {
+    if (!isRecord(item)) return [];
+    const title = text(item.title).trim();
+    const description = text(item.description).trim();
+    if (!title && !description) return [];
+    return [
+      {
+        title,
+        description,
+        icon: text(item.icon),
+        points: pointLabels(item.points),
+      },
+    ];
+  });
+}
+
+function rowsOf<T>(value: unknown, map: (row: LeanDoc) => T) {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((row) => (isRecord(row) ? [map(row)] : []));
+}
+
+function toDetail(doc: LeanDoc, siblings: ServiceCard[]): ServiceDetailView {
+  const card = toCard(doc);
+  const overviewUrl = text(isRecord(doc.overviewImage) ? doc.overviewImage.url : "");
+  const overviewUsable =
+    overviewUrl.startsWith("/") || /^https?:\/\//.test(overviewUrl);
+  const related = siblings.slice(0, 3);
   return {
     ...card,
-    detailReady: true,
-    heroTitle: item.heroTitle,
-    heroDescription: item.heroDescription,
-    overviewTitle: item.overviewTitle,
-    overviewDescription: item.overview,
-    overviewImage: tentImage(item.image),
-    guideTitle: item.guideTitle,
-    guideDescription: item.guide,
-    applications: [
-      {
-        title: "Where it is used",
-        description: item.points[0],
-        icon: "home",
-        points: [...item.points],
-      },
-      {
-        title: "What we handle",
-        description: "Survey, engineering, supply, installation, and handover.",
-        icon: "wrench",
-        points: ["Site survey", "Engineering", "Installation crew"],
-      },
-      {
-        title: "How you buy it",
-        description: "Rental, seasonal hire, or purchase, confirmed in the quotation.",
-        icon: "award",
-        points: ["Weekend hire", "Seasonal hire", "Purchase"],
-      },
-    ],
-    showPerformanceMatrix: true,
-    performanceTitle: "Typical sizes",
-    performanceDescription:
-      "Final spans follow the site survey. These ranges are a starting point for planning.",
-    performanceLabels: ["Scale", "Typical size", "Best suited to"],
-    performanceRows: item.specs,
-    density: "Aluminum frame",
-    warranty: "Project warranty",
-    brandingTitle: "Colour and branding",
-    brandingDescription:
-      "Roof and wall membranes can be specified in a project colour, with branding on valances and gables.",
-    brandColorLabel: "Common membrane colours",
-    brandColors: [
-      { hex: "#f4f4f4", selected: true },
-      { hex: "#e6d3b3", selected: false },
-      { hex: "#1c1c1c", selected: false },
-      { hex: "#9a3412", selected: false },
-    ],
-    showSpaceRequirements: false,
-    spaceTitle: "",
-    spaceDescription: "",
-    spaceLabels: [],
-    spaceRows: [],
-    showProcess: true,
-    processTitle: "How the project runs",
-    processDescription:
-      "One team stays with the tent from the first measure to handover or strike.",
-    processSteps: PROCESS_STEPS,
-    faqIntro: `Practical answers before you brief a ${item.title.toLowerCase()}.`,
-    faqs: faqsFor(item),
-    caseStudiesTitle: "",
-    caseStudiesDescription: "",
-    projectsTitle: "Recent applications",
-    projectsDescription:
-      "A selection of the kinds of sites this structure is specified for across the UAE and GCC.",
+    detailReady: Boolean(doc.detailReady),
+    heroTitle: text(doc.heroTitle),
+    heroDescription: text(doc.heroDescription),
+    overviewTitle: text(doc.overviewTitle),
+    overviewDescription: text(doc.overviewDescription),
+    overviewImage: overviewUsable ? overviewUrl : card.image,
+    guideTitle: text(doc.guideTitle),
+    guideDescription: text(doc.guideDescription),
+    applications: applicationsOf(doc.applications),
+    showPerformanceMatrix: Boolean(doc.showPerformanceMatrix),
+    performanceTitle: text(doc.performanceTitle),
+    performanceDescription: text(doc.performanceDescription),
+    performanceLabels: columnLabels(doc.performanceLabels, PERFORMANCE_COLUMN_LABELS),
+    performanceRows: rowsOf(doc.performanceRows, (row) => ({
+      useCase: text(row.useCase),
+      recommended: text(row.recommended),
+      forceReduction: text(row.forceReduction),
+    })),
+    density: text(doc.density),
+    warranty: text(doc.warranty),
+    brandingTitle: text(doc.brandingTitle),
+    brandingDescription: text(doc.brandingDescription),
+    brandColorLabel: text(doc.brandColorLabel),
+    brandColors: readBrandColors(doc.brandColors),
+    showSpaceRequirements: Boolean(doc.showSpaceRequirements),
+    spaceTitle: text(doc.spaceTitle),
+    spaceDescription: text(doc.spaceDescription),
+    spaceLabels: columnLabels(doc.spaceLabels, SPACE_COLUMN_LABELS),
+    spaceRows: rowsOf(doc.spaceRows, (row) => ({
+      useCase: text(row.useCase),
+      recommended: text(row.recommended),
+      impact: text(row.impact),
+      slip: text(row.slip),
+      acoustic: text(row.acoustic),
+      maintenance: text(row.maintenance),
+    })),
+    showProcess: doc.showProcess !== false,
+    processTitle: text(doc.processTitle),
+    processDescription: text(doc.processDescription),
+    processSteps: readProcessSteps(doc.processSteps),
+    faqIntro: readFaqIntro(doc.faqIntro),
+    faqs: readFaqs(doc.faqs),
+    caseStudiesTitle: text(doc.caseStudiesTitle),
+    caseStudiesDescription: text(doc.caseStudiesDescription),
+    projectsTitle: text(doc.projectsTitle),
+    projectsDescription: text(doc.projectsDescription),
     related,
     siblings,
-    seoTitle: item.title,
-    seoDescription: item.excerpt,
+    seoTitle: text(doc.seoTitle) || card.title,
+    seoDescription: text(doc.seoDescription) || card.excerpt,
   };
+}
+
+async function publishedServices() {
+  const { Service } = await getModels();
+  const docs = await Service.find(PUBLISHED)
+    .populate("image")
+    .populate("overviewImage")
+    .populate("parent")
+    .sort({ sortOrder: 1, title: 1 })
+    .lean();
+  return docs.filter(isRecord);
 }
 
 export async function getServices(limit = 100): Promise<ServiceCard[]> {
-  return tentOfferings.slice(0, limit).map(toCard);
+  const docs = await publishedServices();
+  return docs.slice(0, limit).map(toCard);
 }
 
 export async function getServiceGroups(): Promise<ServiceGroup[]> {
-  return tentGroups.map((group) => ({
-    id: group.id,
-    slug: group.slug,
-    title: group.title,
-    sortOrder: group.sortOrder,
-    children: offeringsByGroup(group.id).map(toCard),
-  }));
+  const { MainService } = await getModels();
+  const [groups, services] = await Promise.all([
+    MainService.find(PUBLISHED).sort({ sortOrder: 1, title: 1 }).lean(),
+    publishedServices(),
+  ]);
+
+  return groups.filter(isRecord).map((group) => {
+    const id = toId(group._id);
+    return {
+      id,
+      slug: text(group.slug),
+      title: text(group.title),
+      sortOrder: Number(group.sortOrder ?? 0),
+      children: services
+        .filter((service) => parentOf(service.parent).id === id)
+        .map(toCard),
+    };
+  });
 }
 
 export async function getServiceBySlug(
   slug: string,
 ): Promise<ServiceDetailView | null> {
-  const item = tentOfferings.find((offering) => offering.slug === slug);
-  return item ? toDetail(item) : null;
+  const docs = await publishedServices();
+  const doc = docs.find((item) => text(item.slug) === slug);
+  if (!doc) return null;
+  const parentId = parentOf(doc.parent).id;
+  const siblings = docs
+    .filter((item) => item !== doc && parentOf(item.parent).id === parentId)
+    .map(toCard);
+  return toDetail(doc, siblings);
 }
 
 export async function getServiceSlugs(): Promise<string[]> {
-  return tentOfferings.map((item) => item.slug);
+  const docs = await publishedServices();
+  return docs.map((doc) => text(doc.slug)).filter(Boolean);
 }
 
 export async function getServiceMegaMenu(): Promise<MegaMenuColumn[]> {
-  return tentGroups.map((group) => ({
-    title: group.title,
-    href: "/services",
-    links: offeringsByGroup(group.id).map((item) => ({
-      label: item.title,
-      href: `/services/${item.slug}`,
-    })),
-  }));
+  const { MainService } = await getModels();
+  const [groupDocs, services] = await Promise.all([
+    MainService.find(PUBLISHED).sort({ sortOrder: 1, title: 1 }).lean(),
+    publishedServices(),
+  ]);
+
+  return groupDocs.filter(isRecord).flatMap((group) => {
+    if (group.showInMegaMenu === false) return [];
+    const id = toId(group._id);
+    const links = services
+      .filter(
+        (service) =>
+          parentOf(service.parent).id === id && service.showInMegaMenu !== false,
+      )
+      .map((service) => {
+        const card = toCard(service);
+        return { label: card.title, href: card.href };
+      });
+    if (links.length === 0) return [];
+    return [{ title: text(group.title), href: "/services", links }];
+  });
 }
 
 export async function getServiceSearchIndex(): Promise<SearchEntry[]> {
-  return tentOfferings.map((item) => ({
-    label: item.title,
-    href: `/services/${item.slug}`,
-    group: groupTitle(item.groupId),
-  }));
+  const docs = await publishedServices();
+  return docs.map((doc) => {
+    const card = toCard(doc);
+    return {
+      label: card.title,
+      href: card.href,
+      group: card.parentTitle ?? "",
+    };
+  });
 }
