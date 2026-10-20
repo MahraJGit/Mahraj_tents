@@ -1,5 +1,4 @@
 import {
-  BadgeCheck,
   FileSignature,
   HandCoins,
   Lock,
@@ -15,6 +14,7 @@ export type LegalSection = {
   title: string;
   paragraphs: string[];
   bullets?: string[];
+  closing?: string[];
 };
 
 export type LegalKeyPoint = {
@@ -48,188 +48,209 @@ export const termsDocument: LegalDocument = {
   title: "Terms of Service",
   breadcrumb: "Terms of Service",
   description:
-    "By using our website or working with us on a project, you agree to these terms. They explain your rights, our responsibilities, and what to expect at every step, from your first quote to final installation.",
+    "Before the first pole goes up, here's how we work together. Clear rules on quotes, hire, site access, weather, and care, so your event or project runs without surprises.",
   heroImage: "/images/tents/tent-modern.jpg",
-  lastUpdated: "23 September 2026",
+  lastUpdated: "20 October 2026",
   highlights: [
-    { label: "Last Updated", value: "23 September 2026" },
-    { label: "Covers", value: "Website use & tent services" },
-    { label: "Governed By", value: "United Arab Emirates Law" },
+    { label: "Last updated", value: "20 October 2026" },
+    { label: "Covers", value: "Website use, tent hire and purchase" },
+    { label: "Governed by", value: "UAE law" },
   ],
-  keyPointsTitle: "The Key Points",
+  keyPointsTitle: "Four Things to Know Before You Book",
   keyPointsDescription:
-    "A quick summary of what matters most once your project is underway. The full terms below add the details behind each point.",
+    "A quick summary of what matters most. The full terms below give the details.",
   keyPoints: [
     {
       icon: FileSignature,
-      title: "Your Contract Comes First",
+      title: "Your signed quote rules",
       description:
-        "If anything here conflicts with your signed quotation or contract, your signed project document takes priority.",
+        "If these terms and your signed quote say different things, the signed quote wins.",
     },
     {
       icon: HandCoins,
-      title: "Online Prices Are Estimates",
+      title: "Online info is a guide",
       description:
-        "Prices, timelines, and stock shown online are estimates only. A written quotation stays legally binding for you.",
+        "Prices, photos, and dates on this site are estimates. Only a written quote is final.",
     },
     {
       icon: Truck,
-      title: "Your Site Must Be Ready",
+      title: "Your site must be ready",
       description:
-        "Ground conditions, access for trucks, and anchoring space must be ready before the crew can build.",
+        "Flat ground, truck access, and space for anchoring must be ready on build day.",
     },
     {
-      icon: BadgeCheck,
-      title: "Follow Care Guidelines",
+      icon: ShieldCheck,
+      title: "Weather can change plans",
       description:
-        "Product and workmanship warranties always remain valid only when the tent is used and cared for correctly.",
+        "For safety, we may delay a build or close a tent in strong wind.",
     },
   ],
   intro:
-    "These terms of service apply whenever you visit mahrajtents.com, download our catalogues, request a quotation, or work with Mahraj Tents on supply, specification, or installation. If anything here conflicts with a signed quotation, purchase order, or contract, that project document always takes priority.",
+    "These terms apply when you use our website, ask for a quote, or hire or buy a tent from Mahraj Tents. They are written to be clear and fair. If anything is unclear, ask us before you sign.",
   related: { label: "Privacy Policy", href: "/privacy-policy" },
   cta: {
-    title: "Still Have a Question About Your Project Terms?",
+    title: "Not Sure About Something in Your Quote?",
     description:
-      "Whether it's pricing, delivery, or warranty coverage, our team is ready to clarify anything before you sign.",
+      "Ask before you sign. We'll explain pricing, delivery, hire period, or tent care in plain words.",
   },
   sections: [
     {
       id: "acceptance",
       title: "Agreeing to These Terms",
       paragraphs: [
-        "By using this website or submitting a project enquiry, you confirm you've read and accepted these terms. If you're acting on behalf of a company, consultant, or contractor, you're confirming you have the authority to agree on their behalf.",
-        'We may revise these terms occasionally, and the "Last updated" date will reflect any changes. Continuing to use our website after an update means you accept the revised version.',
+        "By using our website or asking us for a quote, you agree to these terms. If you act for a company or a client, you confirm you can agree for them.",
+        "We may update these terms from time to time. The date at the top will change. If you keep using our website or services after that, you accept the new version.",
       ],
     },
     {
       id: "definitions",
-      title: "A Few Key Terms",
-      paragraphs: [
-        "To keep things clear, here's what some words mean throughout this page:",
-      ],
+      title: "Simple Definitions",
+      paragraphs: [],
       bullets: [
-        '"We," "us," and "our" refer to Mahraj Tents and our authorized regional offices',
-        '"You" and "client" refer to anyone browsing our site, requesting a quote, or hiring us for a project',
-        '"Works" means supply, installation, strike, and any related services outlined in a quotation or contract',
-        '"Project documents" means the quotation, specification, drawings, purchase order, or signed contract tied to your job',
+        "We, Us: Mahraj Tents.",
+        "You: Anyone who visits our site, asks for a quote, or hires or buys from us.",
+        "Works: The survey, supply, installation, strike, and other services in your quote.",
+        "Project Documents: Your quote, drawings, order, or signed contract.",
+        "Strike: Taking the tent down and removing it.",
       ],
     },
     {
       id: "quotes",
-      title: "How Orders Are Confirmed",
+      title: "Quotes and Orders",
       paragraphs: [
-        "Your order becomes binding once we issue written confirmation or once you accept a quotation in writing. Any changes to quantity, product, or timeline after confirmation may affect pricing and delivery.",
-        "Fabric colours, photos, and drawings are a guide. Daylight, lining, and the site itself change how a tent looks, so confirm colour before fabrication.",
+        "A quote shows your tent size, type, and services. It is valid for the period written on it. Your order is confirmed when you accept the quote in writing, and we confirm it back.",
+        "Your quote will say if it is for hire or purchase. Photos, colours, and 3D drawings are a guide. Light and site conditions can change how a tent looks, so please check colours and layouts with us before we build.",
       ],
     },
     {
       id: "payment",
-      title: "Pricing and Payment",
+      title: "Prices and Payment",
       paragraphs: [
-        "Unless stated otherwise on your quotation, prices exclude VAT and other applicable duties, added at the current rate. Payment terms, deposits, and milestone stages are detailed in your project documents.",
-        "If a deposit is required, materials are only ordered once payment is received. Late payments may delay delivery or installation, and where the contract allows it, may result in interest charges or a pause in work until payment is resolved.",
+        "Prices do not include VAT unless the quote says so. Deposits and payment dates are listed in your quote.",
+        "We start ordering materials or scheduling crews after we receive the deposit. If payment is late, we may delay delivery or installation until it is paid.",
       ],
     },
     {
       id: "delivery",
-      title: "Delivery and Ownership",
+      title: "Delivery, Hire and Ownership",
       paragraphs: [
-        "Delivery dates are estimates, based on manufacturer lead times, shipping, and customs clearance. We'll keep you updated on any major changes, but we're not responsible for indirect losses caused by delays outside our control.",
-        "Once materials are delivered to your site or a nominated storage location, the risk transfers to you. Ownership of the materials only passes once we've received payment in full. You're responsible for keeping delivered materials stored securely, dry, and level.",
+        "Dates are our best estimate. We will tell you quickly if they change.",
+      ],
+      bullets: [
+        "If You are Buying: The tent is yours only after full payment. Until then, it stays our property.",
+        "If You are Hiring: The tent stays ours at all times. You can use it only for the dates, place, and purpose in your quote. Please do not move, sell, sublet, or change it.",
+      ],
+      closing: [
+        "Once the tent is on your site, you are responsible for its safety until we take it away or hand it back.",
       ],
     },
     {
-      id: "installation",
-      title: "Your Responsibilities On-Site",
-      paragraphs: [
-        "If we're handling installation, you're responsible for safe access, a clear footprint, power if required, and disclosure of underground services or structural limits before work begins.",
-        "If the ground or access does not match what was surveyed, we may pause the build and issue a variation until the site is ready.",
+      id: "site",
+      title: "Your Site and Permits",
+      paragraphs: ["To build safely, we need:"],
+      bullets: [
+        "Clear, level ground and enough room for the frame and anchors",
+        "Truck and crane access",
+        "Power, if the quote needs it",
+        "Details of pipes, cables, or weak ground below the surface",
+        "Any permits or approvals your venue or authority requires, unless we agreed to arrange them",
+      ],
+      closing: [
+        "If the site is different from what we surveyed, we may pause the work. We will explain what is needed and any extra cost before we continue.",
       ],
     },
     {
-      id: "variations",
-      title: "Changes, Delays, and Cancellations",
+      id: "changes",
+      title: "Changes, Delays and Cancellations",
       paragraphs: [
-        "Any change in scope, product, area, or sequencing is documented as a written variation, showing its impact on cost and timeline. If instructions are given verbally on-site, we'll confirm them in writing before acting on them.",
-        "If a project is postponed or cancelled after materials are ordered, you remain responsible for non-returnable items, manufacturer restocking fees, and any work already completed. Custom or cut-to-size products generally can't be returned.",
+        "If you want to change the size, layout, date, or services, tell us in writing. We will confirm any change in cost or time before we act.",
+        "If you cancel or postpone after we have started ordering, cutting, or building, you pay for work done, materials ordered, and costs we cannot recover. Custom made items usually cannot be returned.",
       ],
     },
     {
-      id: "warranties",
-      title: "Warranties and Ongoing Care",
+      id: "care",
+      title: "Warranties and Tent Care",
       paragraphs: [
-        "Manufacturer warranties apply based on the specific tent structure used in your project. If installation workmanship warranties are included, their coverage and duration are detailed in your project documents.",
-        "Warranties don't cover damage caused by misuse, wrong cleaning products, unauthorized repairs, building movement, water damage from other trades, or skipping the maintenance guide provided at handover.",
-        "If you notice a possible defect, please report it in writing as soon as possible so we can assess it before further wear affects our evaluation.",
+        "Warranties follow the structure and materials in your project documents. Hire tents are covered by the hire terms in your quote.",
+        "You must use the tent as intended and follow our care and safety guidance. This includes:",
+      ],
+      bullets: [
+        "No cooking flames, candles, or heaters inside unless we approve",
+        "No hanging heavy items, lights, or décor from the frame without approval",
+        "No moving or removing anchors, ballast, or side walls",
+        "No repairs by anyone except us",
+      ],
+      closing: [
+        "Warranties do not cover misuse, unapproved changes, extreme weather beyond design limits, or poor care. Please report any damage or fault in writing as soon as you see it.",
       ],
     },
     {
       id: "website",
       title: "Using Our Website",
       paragraphs: [
-        "You're welcome to browse our site, download catalogues for project use, and reach out with enquiries. Please don't misuse the website, attempt to access restricted areas, scrape content in bulk, or present our materials as your own specification library.",
-        "We work hard to keep our website accurate and available, but we can't guarantee it will always be uninterrupted. Product details and downloads may change as our offerings are updated.",
+        "You can browse, download catalogues, and send enquiries. Please do not copy content in bulk, break into restricted areas, send harmful code, or pretend to be us.",
+        "We try to keep our website correct and online, but we cannot promise it will never have errors or downtime.",
       ],
     },
     {
-      id: "ip",
-      title: "Ownership of Our Content",
+      id: "content",
+      title: "Our Content",
       paragraphs: [
-        "All trademarks, photos, drawings, catalogues, and written content on this site belong to Mahraj Tents or our licensors. You're free to share pages or documents for genuine project communication, but you may not reproduce, resell, or remove attribution from them without our written permission.",
+        "Our logos, photos, drawings, text, and designs belong to Mahraj Tents or its licensors. You may share them to discuss a project with us. Please do not copy, sell, or edit them without our written permission.",
+        "If we feature your event or project in our work, we will ask for your agreement first.",
       ],
     },
     {
       id: "confidentiality",
-      title: "Keeping Information Confidential",
+      title: "Keeping Things Confidential",
       paragraphs: [
-        "Drawings, tender details, and pricing shared during a project are treated as confidential and only shared internally with people who need them to complete the work. We expect the same discretion from clients regarding our rates and technical proposals.",
+        "We keep your drawings, venue details, tender documents, and prices private and share them only with people who need them for your project. Please also keep our prices and technical proposals private.",
       ],
     },
     {
       id: "liability",
       title: "Limits on Our Responsibility",
       paragraphs: [
-        "Information on our website is shared in good faith, but it does not replace a site survey or a written specification. We're not responsible for decisions made from website content alone.",
-        "To the extent allowed by law, our liability for any claim related to website use is limited to what you've paid us (if anything) for that specific service. Liability tied to an actual project is governed by your signed project documents.",
-        "Nothing here limits liability that can't legally be excluded under UAE law, including liability for fraud or personal injury caused by negligence.",
+        "Website content is for general guidance. It is not a survey or a final design. Please do not rely on it alone.",
+        "As far as the law allows, we are not responsible for indirect losses, such as lost bookings, lost profit, or event costs caused by delays. Our responsibility for a project is set in your project documents.",
+        "Nothing here removes responsibility that the law does not allow us to limit, such as fraud or injury caused by our negligence.",
       ],
     },
     {
       id: "indemnity",
       title: "Your Responsibility to Us",
       paragraphs: [
-        "You agree to cover any claims that arise from misusing our website, breaching these terms, or providing inaccurate information that leads to loss, rework, or third-party claims.",
+        "You agree to cover us for losses or claims caused by wrong information you give us, misuse of the tent, or breaking these terms. This includes damage to hired tents beyond normal wear.",
       ],
     },
     {
-      id: "force-majeure",
-      title: "When Things Are Out of Our Control",
+      id: "weather",
+      title: "Events Outside Our Control",
       paragraphs: [
-        "Neither of us is responsible for delays caused by events beyond reasonable control, such as extreme weather, port or customs disruptions, manufacturer shutdowns, utility failures, civil unrest, or new laws. Affected obligations are paused during the event, and timelines are adjusted accordingly.",
+        "Neither side is at fault for delays caused by things we cannot reasonably control, such as storms, strong winds, extreme heat, port or customs delays, supplier problems, power failures, new laws, or emergencies.",
+        "If strong wind or unsafe weather is forecast, we may pause the build or ask you to clear the tent for everyone's safety. We will agree on a new plan with you as soon as it is safe.",
       ],
     },
     {
-      id: "third-parties",
-      title: "Links and Partner Services",
+      id: "partners",
+      title: "Links and Partners",
       paragraphs: [
-        "Our website may link to maps, social platforms, or manufacturer resources. These sites operate under their own terms, and we're not responsible for their content or availability.",
-        "We may also work with authorized partners, logistics providers, or specialist installers to complete your project. They're required to follow the same confidentiality and quality standards we uphold.",
+        "Our website may link to maps, social media, or other sites. Those sites have their own rules, and we are not responsible for them.",
+        "We may use delivery partners or specialist installers. We expect them to meet our standards for safety, quality, and confidentiality.",
       ],
     },
     {
       id: "general",
       title: "If Part of These Terms Doesn't Apply",
       paragraphs: [
-        "If any part of these terms is found to be unenforceable, the rest will still remain valid. If we don't immediately enforce a right, that doesn't mean we've given it up.",
-        "Together with your project documents, these terms make up our complete agreement regarding website use, replacing any earlier discussions on the same topic.",
+        "If one part of these terms cannot be enforced, the rest still applies. If we do not enforce a right straight away, we have not given it up. These terms and your project documents are our full agreement.",
       ],
     },
     {
       id: "law",
       title: "Which Laws Apply",
       paragraphs: [
-        "These terms are governed by the laws of the United Arab Emirates. Any disputes related to website use fall under the exclusive jurisdiction of Dubai courts, unless your signed project contract states otherwise.",
+        "These terms follow the laws of the United Arab Emirates. The courts of Dubai will handle disputes about website use, unless your signed contract says something different. Projects outside the UAE may follow the law in your contract.",
       ],
     },
     {
@@ -249,200 +270,194 @@ export const privacyDocument: LegalDocument = {
   title: "Privacy Policy",
   breadcrumb: "Privacy Policy",
   description:
-    "We explain clearly how Mahraj Tents collects, stores, and safeguards your personal details whenever you reach out, request a quote, or work with us on a project.",
+    "Your information matters to us. Mahraj Tents uses your details to understand your requirements, prepare quotations, plan installations, and deliver tent solutions while keeping your personal information secure.",
   heroImage: "/images/tents/tent-luxury.jpg",
-  lastUpdated: "23 September 2026",
+  lastUpdated: "20 October 2026",
   highlights: [
-    { label: "Last Updated", value: "23 September 2026" },
-    { label: "Information Collected", value: "Enquiries & project details" },
-    { label: "Privacy Questions", value: "Tents@mahraj.com" },
+    { label: "Last updated", value: "20 October 2026" },
+    { label: "Information collected", value: "Enquiry, site and contact details" },
+    { label: "Privacy questions", value: "Tents@mahraj.com" },
   ],
-  keyPointsTitle: "How We Use Your Data",
+  keyPointsTitle: "How We Handle Your Information",
   keyPointsDescription:
-    "A quick overview of how we collect, use, and protect your information. You can find the full details further down this page.",
+    "A simple guide to how we collect, manage, and protect your information.",
   keyPoints: [
     {
       icon: UserCheck,
-      title: "What We Collect",
+      title: "What we collect",
       description:
-        "Your name, company details, contact information, and anything you share through our enquiry or quotation forms.",
+        "Your name, contact details, event date, site location, and what the tent needs to do.",
     },
     {
       icon: ShieldCheck,
-      title: "Why We Use It",
+      title: "Why we need it",
       description:
-        "To prepare quotes, arrange site surveys, manage installation, and follow up with aftercare. We never sell your data to anyone.",
+        "To survey the ground, specify the span, quote hire or purchase, and install on time.",
     },
     {
       icon: Lock,
-      title: "Who We Share It With",
+      title: "Who sees it",
       description:
-        "Only with installation teams, delivery partners, manufacturers handling warranties, and trusted providers that support our systems.",
+        "Only the crew, delivery partners, and suppliers working on your tent. We never sell it.",
     },
     {
       icon: Mail,
-      title: "Your Rights & Choices",
+      title: "What you control",
       description:
-        "You can request access, corrections, or deletion of your data, or unsubscribe from emails anytime using the link provided.",
+        "Ask to see, fix, or delete your data, or opt out of emails, whenever you like.",
     },
   ],
   intro:
-    "At Mahraj Tents, we understand that sharing your personal or project details takes trust. This policy explains, in simple terms, what information we collect when you visit our website, request a quote, sign up for updates, or work with us on a tent project, and exactly how we handle it.",
+    "At Mahraj Tents, we understand that every project involves specific site details, schedules, and requirements. We collect and use your information to respond to enquiries, plan suitable tent solutions, and coordinate delivery and installation. This Privacy Policy explains what information we collect, how we use it, and the steps we take to protect it.",
   related: { label: "Terms of Service", href: "/terms" },
   cta: {
-    title: "Have a Question About Your Data?",
+    title: "Questions About Your Data? Ask Us Directly.",
     description:
-      "Whether you want to access, correct, or delete your information, our team is here to help, just reach out anytime.",
+      "Need a copy, a correction, or a deletion? Tell us what you need, and we'll sort it.",
   },
   sections: [
     {
       id: "who-we-are",
-      title: "Who Manages Your Data",
+      title: "Who we are",
       paragraphs: [
-        "Mahraj Tents is responsible for the personal data collected through our website and enquiry channels. We're based at 2204, B2B Tower, Business Bay, Dubai.",
-        'Got a privacy question or request? Email Tents@mahraj.com with the subject "Privacy Request," and we\'ll get back to you promptly.',
+        "Mahraj Tents is responsible for the personal data collected through this website, our quote form, WhatsApp, phone, and email. Our office is 2204, B2B Tower, Business Bay, Dubai.",
       ],
     },
     {
       id: "what-we-collect",
-      title: "What Information We Collect",
-      paragraphs: [
-        "We only collect what's needed to serve you well, nothing more:",
-      ],
+      title: "What we collect",
+      paragraphs: [],
       bullets: [
-        "Contact details: Your name, company, email, and phone number",
-        "Project information: The solution you're interested in, location, area size, and any message you send us",
-        "Newsletter details: If you subscribe to our tent notes",
-        "Technical data: Browser type, device, IP address, and pages you visit on our site",
-        "Conversation records: From email, WhatsApp, or phone calls with our team",
+        "Contact details: Name, company, phone, and email.",
+        "Site and event details: Location, date, guest count or intended use, ground conditions, and any photos, plans, or pins you send.",
+        "Conversations: Emails, WhatsApp messages, and call notes about your enquiry or project.",
+        "Newsletter details: Your email, if you subscribe to journal updates.",
+        "Reviews and project content: Your name, role, and comments if you agree to be featured.",
+        "Website data: Device, browser, IP address, and pages viewed.",
       ],
     },
     {
-      id: "how-we-collect",
-      title: "How We Collect Your Information",
-      paragraphs: [
-        "There are only a few simple ways your data gets to us:",
-      ],
+      id: "how-it-reaches-us",
+      title: "How It Reaches Us",
+      paragraphs: [],
       bullets: [
-        "You submit it directly through a form, email, call, or message.",
-        "Our website collects some technical data automatically through cookies and server logs.",
-        "A colleague or contractor on your project team shares it with us on your behalf.",
-        "We occasionally verify publicly available business details.",
+        "You send it through the quote or contact form, WhatsApp, email, a call, or at a site visit.",
+        "Our website records some data automatically through cookies and logs.",
+        "A planner, venue, or contractor gives us your details to arrange a tent for you.",
       ],
     },
     {
-      id: "how-we-use",
-      title: "Why We Use Your Data",
-      paragraphs: [
-        "We only use your information for genuine business reasons connected to your project:",
-      ],
+      id: "why-we-use-it",
+      title: "Why We Use It",
+      paragraphs: [],
       bullets: [
-        "Responding to quote requests, site surveys, and technical questions",
-        "Preparing specifications, proposals, and documentation",
-        "Managing material delivery, installation, and aftercare",
-        "Sending catalogs or insight emails you've asked for",
-        "Improving our website's performance and content",
-        "Meeting legal, accounting, and warranty obligations",
+        "Reply to enquiries and book site surveys",
+        "Design and quote the right structure, whether for hire or purchase",
+        "Plan delivery, installation, event-day support, and strike",
+        "Share catalogues or journal articles you asked for",
+        "Keep the website secure and working well",
+        "Meet UAE and KSA legal, tax, and record keeping duties",
       ],
     },
     {
-      id: "legal-basis",
-      title: "The Legal Basis Behind Our Processing",
+      id: "legal-grounds",
+      title: "Our Legal Grounds",
       paragraphs: [
-        "Depending on the situation, we process your data based on the following grounds (and if we're relying on your consent, you're free to withdraw it anytime without affecting anything we've already processed):",
+        "We rely on one or more of these, depending on the situation:",
       ],
       bullets: [
-        "Your consent, such as subscribing to our newsletter",
-        "Contractual necessity, like preparing quotes or managing installations",
-        "Legitimate business interest, such as running and securing our operations",
-        "Legal obligation, like tax and record-keeping requirements",
+        "Consent: Newsletter sign-ups or featuring your review or event photos.",
+        "Contract: Quoting and delivering what you request.",
+        "Legitimate interest: Running, securing, and improving our business.",
+        "Legal duty: Accounting and regulatory requirements.",
+      ],
+      closing: [
+        "You can withdraw consent at any time. We follow the data protection laws that apply in the UAE and Saudi Arabia.",
       ],
     },
     {
-      id: "marketing",
-      title: "Your Communication Choices",
+      id: "messages",
+      title: "Messages From Us",
       paragraphs: [
-        "We only send tent notes and updates to people who've asked for them or clients working with us on relevant projects.",
-        "Every marketing email includes a simple unsubscribe link. Note that opting out of marketing won't stop essential updates, like delivery notices or installation scheduling. Those are part of your active project.",
+        "You'll hear from us about your quote, survey, and installation schedule. Updates and journal emails are sent only to those who ask for them, with an unsubscribe link in each. Opting out won't stop project messages you still need.",
       ],
     },
     {
       id: "sharing",
-      title: "Who We Share Your Data With",
-      paragraphs: [
-        "We never sell your personal information. We only share it with trusted parties who help deliver the service you've requested:",
-      ],
+      title: "Who We Share It With",
+      paragraphs: [],
       bullets: [
-        "Installation crews, logistics partners, and our regional offices",
-        "Manufacturers, when a warranty claim or technical query needs it",
-        "IT, hosting, email, and analytics providers working on our instructions",
-        "Legal advisors or authorities, only where required by law",
+        "Installation crews and delivery partners: So the right people arrive at the right site at the right time.",
+        "Suppliers and manufacturers: For materials, specifications, or technical queries.",
+        "Technology providers: Hosting, email, messaging, and analytics services acting on our instructions.",
+        "Advisers and authorities: Only when the law requires or to protect legal rights.",
       ],
+      closing: ["We never sell or rent personal data."],
     },
     {
       id: "cookies",
-      title: "Cookies on Our Website",
+      title: "Cookies",
       paragraphs: [
-        "We use essential cookies to keep our website running smoothly and optional analytics cookies to understand which pages help our visitors most.",
-        "You can manage or change your cookie preferences at any time through your browser settings. Just know that blocking some cookies may affect how forms or search features work on our site.",
+        "Essential cookies keep the site and quote form running. Optional analytics cookies show us which pages help visitors most. You can control cookies in your browser; blocking some may affect forms and navigation.",
       ],
     },
     {
       id: "retention",
-      title: "How Long We Keep Your Data",
-      paragraphs: [
-        "We keep enquiry data until your project is complete, plus extra time for warranty and accounting needs. Newsletter data stays until you unsubscribe, and technical logs are kept only as long as needed for security and troubleshooting purposes.",
+      title: "How Long We Keep It",
+      paragraphs: [],
+      bullets: [
+        "Enquiries and projects: Until the job ends, plus any period needed for accounts, legal, or support records.",
+        "Newsletter: Until you unsubscribe.",
+        "Website logs: Only as long as security and troubleshooting require.",
       ],
+      closing: ["After that, we delete or securely dispose of it."],
     },
     {
       id: "security",
-      title: "Keeping Your Data Safe",
+      title: "Keeping It Safe",
       paragraphs: [
-        "We take real steps to protect your information, including access controls, secure hosting, and strict staff data handling practices.",
-        "That said, no online transmission is ever 100% secure. Please avoid sending sensitive payment details through email, and reach out to us directly if anyone contacts you asking for unexpected payment information.",
+        "We use access controls, secure hosting, and limited access. No online channel is risk free, so please don't send card or banking details by chat or email. If someone claiming to be us asks for payment details unexpectedly, call us on our official number first.",
       ],
     },
     {
       id: "breach",
-      title: "If Something Ever Goes Wrong",
+      title: "If Something Goes Wrong",
       paragraphs: [
-        "In the rare event of a security incident affecting your data, we'll act quickly by investigating the issue, containing it, and notifying you (and relevant authorities, where legally required) without unnecessary delay.",
+        "If personal data is ever put at risk, we will investigate, contain it, and reduce the harm. Where the law requires, we'll notify you and the relevant authority without undue delay.",
       ],
     },
     {
       id: "rights",
-      title: "Your Privacy Rights",
+      title: "Your Rights",
       paragraphs: [
-        "You have the right to access the personal data we hold, ask us to correct or delete it, restrict or object to certain processing, and opt out of marketing. We may verify your identity before completing requests and retain limited records for legal reasons. If unhappy with our response, contact your local data protection authority.",
+        "You can ask to access, correct, or delete your data, restrict or object to certain uses, and opt out of marketing. We may confirm your identity first, and we may keep limited records where the law requires. If you're unhappy with our response, you can contact your local data protection authority.",
       ],
     },
     {
-      id: "international",
-      title: "International Data Transfers",
+      id: "borders",
+      title: "Data Across Borders",
       paragraphs: [
-        "Since we operate across the GCC and work with cloud services and manufacturer partners, your data may sometimes be processed in a different country than where you submitted it. Wherever it goes, we make sure it's handled with the same level of protection outlined in this policy.",
+        "We work across the UAE and KSA and use cloud tools, so some data may be processed outside the country where you shared it. When that happens, we apply safeguards that meet legal requirements.",
       ],
     },
     {
       id: "children",
-      title: "A Note About Children's Privacy",
+      title: "Children",
       paragraphs: [
-        "Our website is built for businesses, consultants, and contractors, not children. We don't knowingly collect data from minors. If you believe a child has shared information with us, please let us know, and we'll remove it right away.",
+        "Our services are for businesses, event professionals, and property owners. We don't knowingly collect children's data. If you believe a child has shared information with us, tell us and we'll delete it.",
       ],
     },
     {
       id: "updates",
-      title: "Updates to This Policy",
+      title: "Policy Updates",
       paragraphs: [
-        "As our services and tools evolve, we may update this policy to reflect those changes. You'll always find the most current version right here, along with the date it was last updated.",
+        "We'll update this page when our services, tools, or the law change, and revise the date at the top. Significant changes will be highlighted here.",
       ],
     },
     {
       id: "contact-privacy",
-      title: "Get in Touch About Privacy",
-      paragraphs: [
-        "Have a question or request about your personal data? We're happy to help.",
-      ],
+      title: "Contact Us About Privacy",
+      paragraphs: [],
       bullets: [
         "Email: Tents@mahraj.com",
         "Phone: +971 55 765 7570",
