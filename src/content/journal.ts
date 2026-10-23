@@ -148,14 +148,14 @@ export const journalPosts: JournalPost[] = [
   },
   {
     id: "clear-span-vs-framed-tents",
-    title: "Clear-span tents and smaller frames, compared",
+    title: "Clear span tents and smaller frames, compared",
     slug: "clear-span-vs-framed-tents",
     excerpt:
       "When the middle of the room must stay empty, and when a lighter frame is enough.",
     image: tentImages.modern,
-    seoTitle: "Clear-span tents compared with smaller frames",
+    seoTitle: "Clear span tents compared with smaller frames",
     seoDescription:
-      "How to choose between a clear-span hall and a smaller event frame.",
+      "How to choose between a clear span hall and a smaller event frame.",
     category: structures,
     author: "Mahraj Tents",
     readTime: "7 min read",
@@ -250,7 +250,7 @@ export const journalPosts: JournalPost[] = [
     image: tentImages.industrial,
     seoTitle: "When a warehouse tent is enough",
     seoDescription:
-      "How to decide between a clear-span warehouse tent and a permanent building.",
+      "How to decide between a clear span warehouse tent and a permanent building.",
     category: operations,
     author: "Mahraj Tents",
     readTime: "6 min read",

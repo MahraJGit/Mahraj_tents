@@ -91,7 +91,7 @@ export function SiteFooter() {
                 Mahraj <span className="text-brand-soft">Tents</span>
               </Link>
               <p className="mt-5 max-w-xs text-sm leading-relaxed">
-                Clear-span tents for weddings, exhibitions, sport, warehousing, and formal hospitality across the UAE and GCC.
+                Clear span tents for weddings, exhibitions, sport, warehousing, and formal hospitality across the UAE and GCC.
               </p>
               <div className="mt-7 flex gap-3">
                 {site.social.map((item) => {

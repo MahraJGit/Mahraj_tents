@@ -18,7 +18,7 @@ export function FeaturedCaseStudies() {
         className="gap-5 md:gap-6"
         eyebrow="Projects"
         title="Tents delivered for real sites"
-        description="A wedding, an exhibition, and a working cover — specified across the UAE."
+        description="A wedding, an exhibition, and a working cover, specified across the UAE."
         action={
           <Button asChild variant="brandOutline" className="hidden md:inline-flex">
             <Link href="/projects">All projects</Link>

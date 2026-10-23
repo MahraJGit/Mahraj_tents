@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "How Mahraj Tents plans, supplies, and installs clear-span structures across the UAE and GCC.",
+    "How Mahraj Tents plans, supplies, and installs clear span structures across the UAE and GCC.",
 };
 
 export default function AboutPage() {

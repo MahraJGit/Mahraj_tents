@@ -9,7 +9,7 @@ import { getServiceGroups } from "@/lib/public/services";
 export const metadata: Metadata = {
   title: "Tents",
   description:
-    "Clear-span tents for weddings, events, exhibitions, sport, Ramadan hospitality, warehousing, and aviation.",
+    "Clear span tents for weddings, events, exhibitions, sport, Ramadan hospitality, warehousing, and aviation.",
 };
 
 export default async function ServicesPage() {

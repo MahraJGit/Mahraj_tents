@@ -353,7 +353,7 @@ export const privacyDocument: LegalDocument = {
       bullets: [
         "Reply to enquiries and book site surveys",
         "Design and quote the right structure, whether for hire or purchase",
-        "Plan delivery, installation, event-day support, and strike",
+        "Plan delivery, installation, event day support, and strike",
         "Share catalogues or journal articles you asked for",
         "Keep the website secure and working well",
         "Meet UAE and KSA legal, tax, and record keeping duties",

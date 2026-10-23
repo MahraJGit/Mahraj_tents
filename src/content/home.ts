@@ -23,7 +23,7 @@ export const heroImage = tentImages.hero;
 export const heroVideo = "/videos/hero/hero-video.mp4";
 
 export const heroCopy = {
-  title: "Clear-span tents for Gulf events and working cover",
+  title: "Clear span tents for Gulf events and working cover",
   description:
     "Hire or purchase a finished structure for a wedding, exhibition, sports cover, or yard. Surveyed, specified, and installed by one crew.",
 };
@@ -80,7 +80,7 @@ export const industries: Industry[] = [
     label: "Warehousing",
     icon: Warehouse,
     summary:
-      "Clear-span fabric bays for storage, workshops, and overflow operations on an existing yard.",
+      "Clear span fabric bays for storage, workshops, and overflow operations on an existing yard.",
     serviceSlug: "warehouse-tent",
   },
   {
@@ -245,7 +245,7 @@ export const projects: Project[] = [
     product: "Warehouse tent",
     image: tentImages.industrial,
     summary:
-      "A clear-span bay for overflow storage, with a vehicle door height set around the yard's forklifts.",
+      "A clear span bay for overflow storage, with a vehicle door height set around the yard's forklifts.",
   },
   {
     slug: "airside-hospitality-shell",
@@ -278,7 +278,7 @@ export const blogHighlights = [
   },
   {
     slug: "clear-span-vs-framed-tents",
-    title: "Clear-Span and Smaller Frames, Compared",
+    title: "Clear span and smaller frames, compared",
     image: tentImages.modern,
   },
   {
@@ -302,7 +302,7 @@ export const faqs = [
   {
     question: "What does Mahraj Tents actually supply?",
     answer:
-      "Clear-span tents for events, exhibitions, sport, warehousing, and formal hospitality. That includes the frame, membrane, anchoring, installation, and, when you are hiring, the strike.",
+      "Clear span tents for events, exhibitions, sport, warehousing, and formal hospitality. That includes the frame, membrane, anchoring, installation, and, when you are hiring, the strike.",
   },
   {
     question: "Can I rent a tent instead of buying one?",

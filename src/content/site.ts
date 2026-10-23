@@ -2,7 +2,7 @@ export const site = {
   name: "Mahraj Tents",
   tagline: "Event, exhibition, and industrial tents across the UAE and GCC",
   description:
-    "Mahraj Tents designs, supplies, and installs clear-span tents for weddings, exhibitions, sports, warehousing, Ramadan hospitality, and aviation sites.",
+    "Mahraj Tents designs, supplies, and installs clear span tents for weddings, exhibitions, sports, warehousing, Ramadan hospitality, and aviation sites.",
   url: "https://mahrajtents.com",
   phone: "+971 55 765 7570",
   phoneHref: "tel:+971557657570",

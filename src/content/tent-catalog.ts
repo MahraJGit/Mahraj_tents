@@ -78,7 +78,7 @@ export const tentOfferings: TentOffering[] = [
     groupId: "solutions",
     image: "hero",
     excerpt:
-      "Short and seasonal hire of clear-span tents, with delivery, installation, and strike handled by one team.",
+      "Short and seasonal hire of clear span tents, with delivery, installation, and strike handled by one team.",
     heroTitle: "Tent rental for events that cannot wait on a permanent build",
     heroDescription:
       "Hire a finished structure for a weekend, a season, or a project window. Mahraj Tents supplies the frame, fabric, anchoring, and crew.",
@@ -124,7 +124,7 @@ export const tentOfferings: TentOffering[] = [
     groupId: "solutions",
     image: "event",
     excerpt:
-      "Clear-span tents for launches, private dinners, conferences, and brand gatherings that need a fast, finished room.",
+      "Clear span tents for launches, private dinners, conferences, and brand gatherings that need a fast, finished room.",
     heroTitle: "Event tents for gatherings that need a proper room outdoors",
     heroDescription:
       "Modular structures for corporate dinners, product launches, conferences, and private celebrations.",
@@ -150,7 +150,7 @@ export const tentOfferings: TentOffering[] = [
       "Temporary halls for outdoor expos, brand pavilions, and overflow exhibition space with visitor circulation built in.",
     heroTitle: "Exhibition tents that hold a show, not just a crowd",
     heroDescription:
-      "Polygon, arch, and clear-span halls for trade displays, outdoor expos, and branded pavilions.",
+      "Polygon, arch, and clear span halls for trade displays, outdoor expos, and branded pavilions.",
     overviewTitle: "Span, height, and a path for visitors",
     overview:
       "Exhibition structures need door lines, rigging points, and enough eave height for stands. We plan those with the floor plan so exhibitors are not fighting the frame.",
@@ -173,13 +173,13 @@ export const tentOfferings: TentOffering[] = [
       "Covered courts, training bays, and spectator hospitality with height and clear span kept free of internal columns.",
     heroTitle: "Sports tents with the height and span the game actually needs",
     heroDescription:
-      "Arch and clear-span covers for training, courts, and hospitality beside the field of play.",
+      "Arch and clear span covers for training, courts, and hospitality beside the field of play.",
     overviewTitle: "Cover the play, keep the lines open",
     overview:
       "Sports covers are specified around clearance, runoff, and side ventilation. The frame stays outside the playing area so the surface underneath can be marked and maintained.",
     guideTitle: "Court and training covers",
     guide:
-      "Share the sport, the required clear height, and whether the cover is seasonal or permanent. We then match an arch or clear-span frame and plan side openings for airflow.",
+      "Share the sport, the required clear height, and whether the cover is seasonal or permanent. We then match an arch or clear span frame and plan side openings for airflow.",
     points: [
       "Clear height for play and equipment",
       "Side ventilation for Gulf heat",
@@ -239,10 +239,10 @@ export const tentOfferings: TentOffering[] = [
     groupId: "solutions",
     image: "industrial",
     excerpt:
-      "Clear-span fabric buildings for storage, workshops, and overflow operations when a permanent shed is not the answer.",
+      "Clear span fabric buildings for storage, workshops, and overflow operations when a permanent shed is not the answer.",
     heroTitle: "Warehouse tents for storage and working cover",
     heroDescription:
-      "Aluminum clear-span structures with PVC membranes for logistics yards, workshops, and temporary operations.",
+      "Aluminum clear span structures with PVC membranes for logistics yards, workshops, and temporary operations.",
     overviewTitle: "Working cover without a permanent build",
     overview:
       "Warehouse tents give a dry, column-free bay for goods, plant, or a short production run. Spans, door height, and anchoring are set around forklifts and the yard you already have.",
@@ -262,10 +262,10 @@ export const tentOfferings: TentOffering[] = [
     groupId: "solutions",
     image: "industrial",
     excerpt:
-      "Wide-span shelters for aircraft, ground equipment, and airside hospitality where a fixed hangar is not available.",
+      "Wide span shelters for aircraft, ground equipment, and airside hospitality where a fixed hangar is not available.",
     heroTitle: "Hangar tents with the span aviation sites demand",
     heroDescription:
-      "Wide, high clear-span structures for aircraft shelter, equipment cover, and airside reception.",
+      "Wide, high clear span structures for aircraft shelter, equipment cover, and airside reception.",
     overviewTitle: "Width and door height come first",
     overview:
       "Hangar tents are dimensioned around wingspan, tail height, and the door opening. The same engineering approach covers airside hospitality shells beside a show or maintenance event.",
@@ -285,7 +285,7 @@ export const tentOfferings: TentOffering[] = [
     groupId: "products",
     image: "pyramid",
     excerpt:
-      "A peaked clear-span tent with a strong silhouette for weddings, pool decks, and branded receptions.",
+      "A peaked clear span tent with a strong silhouette for weddings, pool decks, and branded receptions.",
     heroTitle: "Pyramid tents with a peak that reads from across the venue",
     heroDescription:
       "Single or linked peaks in heavy-duty PVC on an aluminum frame, for ceremonies, lounges, and waterfront receptions.",
@@ -297,7 +297,7 @@ export const tentOfferings: TentOffering[] = [
       "Best where the tent should be seen as well as used: garden weddings, villa terraces, and brand receptions. Clear or solid walls change how open the peak feels at night.",
     points: [
       "Single or linked peaks",
-      "Clear-span guest floor",
+      "Clear span guest floor",
       "Solid or glazed wall options",
     ],
     specs: sharedSpecs("6m x 6m", "10m x 10m", "12m x 12m linked"),
@@ -308,10 +308,10 @@ export const tentOfferings: TentOffering[] = [
     groupId: "products",
     image: "dome",
     excerpt:
-      "A circular clear-span that keeps sightlines open for dining, launches, and hospitality lounges.",
+      "A circular clear span that keeps sightlines open for dining, launches, and hospitality lounges.",
     heroTitle: "Dome tents for open sightlines and a calm interior",
     heroDescription:
-      "Round clear-span structures for dinners, lounges, and launches where guests should see across the room.",
+      "Round clear span structures for dinners, lounges, and launches where guests should see across the room.",
     overviewTitle: "A room without a favoured corner",
     overview:
       "The dome puts everyone under one roof with no central column. It suits round dining, product reveals, and lounges where the plan is radial rather than a long hall.",
@@ -380,7 +380,7 @@ export const tentOfferings: TentOffering[] = [
       "A faceted structure with a distinctive roof line for exhibitions and brand pavilions.",
     heroTitle: "Polygon tents with a roof line people remember",
     heroDescription:
-      "Faceted clear-span structures for pavilions, exhibitions, and launches that need a stronger silhouette.",
+      "Faceted clear span structures for pavilions, exhibitions, and launches that need a stronger silhouette.",
     overviewTitle: "Architecture you can still strike",
     overview:
       "The polygon roof gives a pavilion its outline while the interior stays a clear span. It is a practical exhibition shell that does not look like a plain storage tent.",
@@ -426,7 +426,7 @@ export const tentOfferings: TentOffering[] = [
       "Transparent walls and a wide opening so guests stay connected to the garden, water, or skyline.",
     heroTitle: "Panoramic tents that keep the view in the room",
     heroDescription:
-      "Clear-wall structures for waterfront dinners, terraces, and any event where the setting is part of the brief.",
+      "Clear wall structures for waterfront dinners, terraces, and any event where the setting is part of the brief.",
     overviewTitle: "Shelter without losing the site",
     overview:
       "Panoramic walls hold the weather out and the view in. The frame is kept slim so the tent does not turn a terrace into a closed hall unless you want it to.",
@@ -472,7 +472,7 @@ export const tentOfferings: TentOffering[] = [
       "An undulating roof for festivals, product launches, and waterfront events that need a softer skyline.",
     heroTitle: "Wave tents with a roof that moves with the event",
     heroDescription:
-      "An undulating clear-span profile for festivals, launches, and waterfront hospitality.",
+      "An undulating clear span profile for festivals, launches, and waterfront hospitality.",
     overviewTitle: "A skyline, still a clear span",
     overview:
       "The wave roof gives the event its photograph while the floor underneath stays open for stages, dining, or exhibits. It is a statement structure with a practical interior.",
@@ -495,7 +495,7 @@ export const tentOfferings: TentOffering[] = [
       "A majlis plan with modern climate control, perimeter seating, and a service path kept out of the gathering.",
     heroTitle: "Arabic majlis tents for gathering, not just for show",
     heroDescription:
-      "Traditional majlis planning inside a modern clear-span tent, with climate, lighting, and service sorted.",
+      "Traditional majlis planning inside a modern clear span tent, with climate, lighting, and service sorted.",
     overviewTitle: "The seating plan leads",
     overview:
       "A majlis tent is designed from the gathering outward: perimeter seating, a clear centre, and a service door that does not cross the guests. The structure can be traditional in character and current in specification.",
@@ -564,7 +564,7 @@ export const tentOfferings: TentOffering[] = [
       "A swept roof line for entrances, stages, and event architecture that should feel sculpted.",
     heroTitle: "Curve tents for entrances, stages, and a sculpted roof",
     heroDescription:
-      "A swept clear-span profile for arrivals, stages, and contemporary event architecture.",
+      "A swept clear span profile for arrivals, stages, and contemporary event architecture.",
     overviewTitle: "An entrance people notice",
     overview:
       "The curve tent works as a stage canopy, an arrival building, or a main hall with a softer roof line than a standard gable. The interior remains a clear span.",

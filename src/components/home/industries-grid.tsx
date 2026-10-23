@@ -15,7 +15,7 @@ export function IndustriesGrid() {
       <SectionHeading
         eyebrow="Applications"
         title="Where these tents are used"
-        description="The same clear-span approach, specified differently for a celebration, a show, a court, or a yard."
+        description="The same clear span approach, specified differently for a celebration, a show, a court, or a yard."
       />
 
       <Stagger className="mt-14 grid gap-5 sm:grid-cols-2">

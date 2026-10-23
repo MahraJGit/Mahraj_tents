@@ -43,7 +43,7 @@ export function Advantage() {
 
         <Media
           src="/images/tents/tent-install.jpg"
-          alt="Crew installing a clear-span tent"
+          alt="Crew installing a clear span tent"
           className="aspect-[4/3] rounded-md"
           sizes="(min-width: 1024px) 45vw, 90vw"
         />

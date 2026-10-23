@@ -125,7 +125,7 @@ export const contactFaqs = [
   {
     question: "How long does delivery take?",
     answer: 
-      "Most stock items arrive within 3–5 working days. Custom orders or specialized tents and branded membranes can take 4–6 weeks from manufacture to delivery."
+      "Most stock items arrive within 3 to 5 working days. Custom orders or specialized tents and branded membranes can take 4 to 6 weeks from manufacture to delivery."
   },
   {
     question: "Can you handle urgent or fast turnaround projects?",

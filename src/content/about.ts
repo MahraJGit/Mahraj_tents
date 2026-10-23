@@ -19,7 +19,7 @@ export const aboutHero = {
   image: tentImages.hero,
   title: "Tent structures designed around the event, the site, and the weather",
   description:
-    "Mahraj Tents plans, supplies, and installs clear-span structures for celebrations, exhibitions, sport, storage, and formal hospitality across the UAE and GCC.",
+    "Mahraj Tents plans, supplies, and installs clear span structures for celebrations, exhibitions, sport, storage, and formal hospitality across the UAE and GCC.",
 };
 
 export const aboutPartners = [

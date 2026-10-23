@@ -17,7 +17,7 @@ export default function IndustriesPage() {
     <>
       <PageHero
         title="Where tents are used"
-        description="The same clear-span approach, specified differently for a wedding, a show, a court, a yard, or a majlis."
+        description="The same clear span approach, specified differently for a wedding, a show, a court, a yard, or a majlis."
       />
       <Section>
         <Stagger className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

@@ -55,7 +55,7 @@ export const cataloguePage = {
       },
       {
         title: "Exhibition halls",
-        description: "Polygon and clear-span halls with doors and stand height planned in.",
+        description: "Polygon and clear span halls with doors and stand height planned in.",
         image: tentImages.modern,
         tags: ["Exhibition", "Pavilion", "Branding"],
       },
@@ -207,7 +207,7 @@ export const cataloguePage = {
       },
       {
         title: "Logistics yard canopy",
-        description: "Clear-span storage in Jebel Ali.",
+        description: "Clear span storage in Jebel Ali.",
         image: tentImages.industrial,
       },
       {
