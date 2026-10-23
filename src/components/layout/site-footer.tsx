@@ -10,7 +10,7 @@ const exploreLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Uses", href: "/industries" },
   { label: "Reviews", href: "/reviews" },
-  { label: "Journal", href: "/blog" },
+  { label: "Blogs", href: "/blog" },
 ];
 
 const companyLinks = [

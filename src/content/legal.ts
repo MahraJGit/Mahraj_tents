@@ -331,7 +331,7 @@ export const privacyDocument: LegalDocument = {
         "Contact details: Name, company, phone, and email.",
         "Site and event details: Location, date, guest count or intended use, ground conditions, and any photos, plans, or pins you send.",
         "Conversations: Emails, WhatsApp messages, and call notes about your enquiry or project.",
-        "Newsletter details: Your email, if you subscribe to journal updates.",
+        "Newsletter details: Your email, if you subscribe to blog updates.",
         "Reviews and project content: Your name, role, and comments if you agree to be featured.",
         "Website data: Device, browser, IP address, and pages viewed.",
       ],
@@ -354,7 +354,7 @@ export const privacyDocument: LegalDocument = {
         "Reply to enquiries and book site surveys",
         "Design and quote the right structure, whether for hire or purchase",
         "Plan delivery, installation, event day support, and strike",
-        "Share catalogues or journal articles you asked for",
+        "Share catalogues or blog articles you asked for",
         "Keep the website secure and working well",
         "Meet UAE and KSA legal, tax, and record keeping duties",
       ],
@@ -379,7 +379,7 @@ export const privacyDocument: LegalDocument = {
       id: "messages",
       title: "Messages From Us",
       paragraphs: [
-        "You'll hear from us about your quote, survey, and installation schedule. Updates and journal emails are sent only to those who ask for them, with an unsubscribe link in each. Opting out won't stop project messages you still need.",
+        "You'll hear from us about your quote, survey, and installation schedule. Updates and blog emails are sent only to those who ask for them, with an unsubscribe link in each. Opting out won't stop project messages you still need.",
       ],
     },
     {

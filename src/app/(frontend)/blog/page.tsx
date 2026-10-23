@@ -12,7 +12,7 @@ import {
 import { getCategories, getFeaturedPosts, getPosts } from "@/lib/public/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blogs",
   description:
     "Notes on specifying, hiring, and installing tents, from the Mahraj Tents project desk.",
 };

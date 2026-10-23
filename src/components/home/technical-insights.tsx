@@ -31,7 +31,7 @@ export async function TechnicalInsights() {
     <Section>
       <SectionHeading
         align="center"
-        eyebrow="Journal"
+        eyebrow="Blogs"
         title="From the project desk"
         description="Short notes on choosing a span, hiring a tent, and planning Ramadan or exhibition dates."
       />

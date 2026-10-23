@@ -37,5 +37,5 @@ export const mainNav: NavLink[] = [
   { label: "About Us", href: "/about" },
   { label: "Reviews", href: "/reviews" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Journal", href: "/blog" },
+  { label: "Blogs", href: "/blog" },
 ];
