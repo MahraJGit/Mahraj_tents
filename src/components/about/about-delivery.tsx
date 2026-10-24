@@ -26,7 +26,7 @@ export function AboutObjectives() {
             <span className="flex size-9 items-center justify-center rounded bg-brand/10 text-brand transition-colors group-hover:bg-white/15 group-hover:text-white">
               <Icon className="size-4" />
             </span>
-            <h3 className="mt-5 text-base font-semibold text-ink transition-colors group-hover:text-white">
+            <h3 className="mt-5 text-base font-semibold text-brand transition-colors group-hover:text-white">
               {title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-body transition-colors group-hover:text-white">
@@ -86,7 +86,7 @@ export function AboutCompliance() {
             <span className="flex size-9 items-center justify-center rounded bg-brand/10 text-brand">
               <Icon className="size-4" />
             </span>
-            <h3 className="mt-4 text-sm font-semibold text-ink">{title}</h3>
+            <h3 className="mt-4 text-sm font-semibold text-brand">{title}</h3>
             <span
               aria-hidden
               className="absolute -bottom-8 -end-8 size-24 rotate-45 bg-brand"

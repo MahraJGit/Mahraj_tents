@@ -30,7 +30,7 @@ export function IndustriesGrid() {
               </span>
               <span className="min-w-0">
                 <span className="flex items-center justify-between gap-3">
-                  <span className="font-heading text-2xl font-semibold text-ink">
+                  <span className="font-heading text-2xl font-semibold text-brand">
                     {label}
                   </span>
                   <ArrowRight className="size-4 shrink-0 text-brand transition-transform group-hover:translate-x-0.5" />

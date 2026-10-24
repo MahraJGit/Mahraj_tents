@@ -170,7 +170,10 @@
   h2,
   h3,
   h4 {
-    @apply font-heading text-ink tracking-tight;
+    @apply font-heading text-brand tracking-tight;
+  }
+  .cms :is(h1, h2, h3, h4) {
+    @apply text-ink;
   }
 }
 

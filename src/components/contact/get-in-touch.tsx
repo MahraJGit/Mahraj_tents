@@ -31,7 +31,7 @@ export function GetInTouch() {
                 <span className="flex size-12 items-center justify-center rounded-full bg-brand/10 text-brand">
                   <Icon className="size-5" />
                 </span>
-                <h3 className="mt-5 text-base font-semibold text-ink">{title}</h3>
+                <h3 className="mt-5 text-base font-semibold text-brand">{title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-body">
                   {description}
                 </p>

@@ -67,7 +67,7 @@ export function IndustryReviewsCarousel({
                 .join("")
                 .slice(0, 2)}
             </span>
-            <h3 className="mt-4 text-base font-semibold text-ink">
+            <h3 className="mt-4 text-base font-semibold text-brand">
               {review.name}
             </h3>
             <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-ink">

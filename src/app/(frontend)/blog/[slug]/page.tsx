@@ -215,7 +215,7 @@ export default async function BlogPostPage({
                 </Link>
               ) : null}
 
-              <h1 className="mt-4 font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-4xl">
+              <h1 className="mt-4 font-heading text-3xl font-semibold leading-[1.12] tracking-tight text-brand sm:text-4xl">
                 {post.title}
               </h1>
 

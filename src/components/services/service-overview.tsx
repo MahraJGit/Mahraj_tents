@@ -108,7 +108,7 @@ export function ServiceGuide({ service }: { service: ServiceDetailView }) {
               className="group border-b border-border bg-surface-alt p-7 transition-colors last:border-b-0 hover:bg-brand hover:text-white md:border-b-0 md:border-e md:last:border-e-0"
             >
               <Icon className="size-6 text-brand transition-colors group-hover:text-white" />
-              <h3 className="mt-5 text-lg font-semibold text-ink transition-colors group-hover:text-white">
+              <h3 className="mt-5 text-lg font-semibold text-brand transition-colors group-hover:text-white">
                 {application.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-body transition-colors group-hover:text-white/75">

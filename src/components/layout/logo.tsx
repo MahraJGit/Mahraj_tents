@@ -14,7 +14,7 @@ export function Logo({
     <Link
       href="/"
       className={cn(
-        "inline-flex items-center gap-2.5 font-heading text-[1.65rem] font-semibold tracking-tight sm:text-[1.85rem]",
+        "inline-flex items-center gap-2 font-heading text-[1.2rem] font-semibold tracking-tight sm:gap-2.5 sm:text-[1.65rem] lg:text-[1.85rem]",
         onDark ? "text-white" : "text-ink",
         className
       )}

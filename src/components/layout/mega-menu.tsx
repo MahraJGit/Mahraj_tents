@@ -87,7 +87,7 @@ export function MegaMenuPanel({ columns }: { columns: MegaMenuColumn[] }) {
             className="rounded-xl border border-border bg-sand/70 p-2"
           >
             <div className="mb-1.5 flex items-center justify-between gap-3 px-1.5">
-              <h3 className="text-sm font-semibold text-ink">{active.title}</h3>
+              <h3 className="text-sm font-semibold text-brand">{active.title}</h3>
               {/* <span className="text-xs text-body">
                 {active.links.length === 1
                   ? "1 system"

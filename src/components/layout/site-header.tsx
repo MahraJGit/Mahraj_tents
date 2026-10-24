@@ -101,8 +101,8 @@ export function SiteHeader({
     >
       <TopBar />
       <div className="relative border-b border-border/80">
-        <Container className="flex h-[4.25rem] items-center justify-between gap-3 lg:h-[4.75rem] lg:gap-4">
-          <Logo />
+        <Container className="flex h-16 items-center justify-between gap-2 sm:h-[4.25rem] sm:gap-3 lg:h-[4.75rem] lg:gap-4">
+          <Logo className="min-w-0 leading-none" />
 
           <NavigationMenu
             viewport={false}
@@ -146,11 +146,11 @@ export function SiteHeader({
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
             <Button
               asChild
               variant="brand"
-              className="h-9 px-3 text-xs sm:h-10 sm:px-5 sm:text-sm"
+              className="h-10 px-3 text-xs sm:h-10 sm:px-5 sm:text-sm"
             >
               <Link href="/contact#quote-form">
                 <span className="sm:hidden">Quote</span>

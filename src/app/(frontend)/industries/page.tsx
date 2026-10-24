@@ -30,7 +30,7 @@ export default function IndustriesPage() {
                 <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-brand">
                   <Icon className="size-6" />
                 </span>
-                <span className="font-heading text-xl font-semibold text-ink">
+                <span className="font-heading text-xl font-semibold text-brand">
                   {label}
                 </span>
               </Link>

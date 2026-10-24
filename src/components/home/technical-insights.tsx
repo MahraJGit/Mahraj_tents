@@ -52,7 +52,7 @@ export async function TechnicalInsights() {
                 sizes="(min-width: 768px) 30vw, 90vw"
               />
             </Link>
-            <h3 className="mt-5 font-heading text-2xl font-semibold text-ink">
+            <h3 className="mt-5 font-heading text-2xl font-semibold text-brand">
               <Link href={post.href} className="transition-colors hover:text-brand">
                 {post.title}
               </Link>

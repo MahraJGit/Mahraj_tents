@@ -27,7 +27,7 @@ export function LegalKeyPoints({ doc }: { doc: LegalDocument }) {
             <span className="flex size-12 items-center justify-center rounded-md bg-brand text-white transition-colors group-hover:bg-white group-hover:text-brand">
               <point.icon className="size-6" />
             </span>
-            <h3 className="mt-5 text-base font-semibold text-ink transition-colors group-hover:text-white">
+            <h3 className="mt-5 text-base font-semibold text-brand transition-colors group-hover:text-white">
               {point.title}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-body transition-colors group-hover:text-white/80">

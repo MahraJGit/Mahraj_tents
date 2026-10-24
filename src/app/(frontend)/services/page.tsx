@@ -23,37 +23,59 @@ export default async function ServicesPage() {
       />
       <Section>
         <div className="space-y-16">
-          {groups.map((group) => (
-            <section key={group.id} aria-labelledby={`service-group-${group.slug}`}>
-              <div className="mb-8 flex items-end justify-between gap-4 border-b border-border pb-5">
-                <h2
-                  id={`service-group-${group.slug}`}
-                  className="font-heading text-3xl font-semibold text-ink sm:text-4xl"
-                >
-                  {group.title}
-                </h2>
-                <p className="text-sm text-body">
-                  {group.children.length === 1
-                    ? "1 solution"
-                    : `${group.children.length} solutions`}
-                </p>
-              </div>
+          {groups.map((group) => {
+            const categories = group.slug === "tent-solutions";
+            return (
+              <section key={group.id} aria-labelledby={`service-group-${group.slug}`}>
+                <div className="mb-5 border-b border-border pb-5 sm:mb-8">
+                  {categories ? (
+                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.22em] text-brand">
+                      Categories
+                    </p>
+                  ) : null}
+                  <div className="mt-2 flex items-end justify-between gap-4">
+                    <h2
+                      id={`service-group-${group.slug}`}
+                      className="font-heading text-3xl font-semibold text-brand sm:text-4xl"
+                    >
+                      {group.title}
+                    </h2>
+                    <p className="shrink-0 text-sm text-body">
+                      {group.children.length === 1
+                        ? "1 solution"
+                        : `${group.children.length} solutions`}
+                    </p>
+                  </div>
+                  {categories ? (
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-body">
+                      Choose by how the tent will be used: a wedding, an exhibition, sport, Ramadan, storage, or hire.
+                    </p>
+                  ) : null}
+                </div>
 
-              <Stagger className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {group.children.map((service) => (
-                  <StaggerItem key={service.slug}>
-                    <OfferingCard
-                      href={service.href}
-                      image={service.image}
-                      imageAlt={service.imageAlt}
-                      title={service.title}
-                      excerpt={service.excerpt}
-                    />
-                  </StaggerItem>
-                ))}
-              </Stagger>
-            </section>
-          ))}
+                <Stagger
+                  className={
+                    categories
+                      ? "grid gap-3 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3"
+                      : "grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+                  }
+                >
+                  {group.children.map((service) => (
+                    <StaggerItem key={service.slug}>
+                      <OfferingCard
+                        href={service.href}
+                        image={service.image}
+                        imageAlt={service.imageAlt}
+                        title={service.title}
+                        excerpt={service.excerpt}
+                        layout={categories ? "scan" : "stack"}
+                      />
+                    </StaggerItem>
+                  ))}
+                </Stagger>
+              </section>
+            );
+          })}
         </div>
       </Section>
     </>

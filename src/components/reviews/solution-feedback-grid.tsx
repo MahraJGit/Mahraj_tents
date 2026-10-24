@@ -52,7 +52,7 @@ export function SolutionFeedbackGrid({
           >
             {media[project.slug]}
             <div className="p-5">
-              <h3 className="text-base font-semibold text-ink">
+              <h3 className="text-base font-semibold text-brand">
                 Project: {project.title}
               </h3>
               <p className="mt-1 text-sm text-body">

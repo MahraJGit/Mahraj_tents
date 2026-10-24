@@ -142,7 +142,7 @@ export function TechnicalResources() {
                 key={title}
                 className="border-b border-border p-7 last:border-b-0 md:border-b-0 md:border-e md:last:border-e-0"
               >
-                <h3 className="text-xl font-semibold text-ink">{title}</h3>
+                <h3 className="text-xl font-semibold text-brand">{title}</h3>
                 <ul className="mt-5 space-y-3">
                   {[
                     "Technical data and test values",
@@ -281,7 +281,7 @@ export function OngoingProjects({ service }: { service: ServiceDetailView }) {
               sizes="(min-width: 768px) 30vw, 90vw"
             />
             <div className="p-5">
-              <h3 className="text-base font-semibold text-ink">
+              <h3 className="text-base font-semibold text-brand">
                 Project: {project.title}
               </h3>
               {/* View detail CTA removed at client request.

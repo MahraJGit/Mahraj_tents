@@ -79,7 +79,7 @@ export function PerformanceMatrix({ service }: { service: ServiceDetailView }) {
         <div className="rounded-xl bg-surface-alt p-7">
           <div className="flex items-start justify-between gap-5">
             <div>
-              <h3 className="text-2xl font-semibold text-ink">
+              <h3 className="text-2xl font-semibold text-brand">
                 {service.brandingTitle}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-body">

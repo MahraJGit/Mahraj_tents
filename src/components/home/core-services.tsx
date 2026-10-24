@@ -35,7 +35,7 @@ export function CoreServices() {
             <span className="mt-4 flex size-11 items-center justify-center rounded-full bg-brand-soft text-brand">
               <Icon className="size-5" />
             </span>
-            <h3 className="mt-5 text-lg font-semibold text-ink">{title}</h3>
+            <h3 className="mt-5 text-lg font-semibold text-brand">{title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-body">{subtitle}</p>
           </StaggerItem>
         ))}

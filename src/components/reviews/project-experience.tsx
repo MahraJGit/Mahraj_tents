@@ -27,7 +27,7 @@ export function ProjectExperience() {
               {step.number}
             </span>
             <div className="pt-1">
-              <h3 className="text-lg font-semibold text-ink">{step.title}</h3>
+              <h3 className="text-lg font-semibold text-brand">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-body">
                 {step.description}
               </p>
