@@ -94,18 +94,6 @@ export const regionalOffices: RegionalOffice[] = [
     hours: "9:00am - 7:00pm",
     mapsHref: site.address.mapsHref,
   },
-  // {
-  //   slug: "riyadh",
-  //   title: "Riyadh Regional Office",
-  //   tone: "navy",
-  //   address: "Al Murooj, Prince Turki St, Al Olaya, Riyadh 12212, Saudi Arabia",
-  //   phone: site.phone,
-  //   phoneHref: site.phoneHref,
-  //   email: site.email,
-  //   hours: "9:00am - 7:00pm",
-  //   mapsHref:
-  //     "https://www.google.com/maps/search/?api=1&query=Al+Murooj+Prince+Turki+St+Al+Olaya+Riyadh",
-  // },
 ];
 
 export const contactFaqIntro =

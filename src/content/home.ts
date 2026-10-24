@@ -293,10 +293,7 @@ export const blogHighlights = [
   },
 ];
 
-export const regions = [
-  "United Arab Emirates (UAE)",
-  "Kingdom of Saudi Arabia (KSA)",
-];
+export const regions = ["United Arab Emirates (UAE)"];
 
 export const faqs = [
   {
